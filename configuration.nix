@@ -216,13 +216,13 @@ in
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = true;
-    };
-  };
+  #services.openssh = {
+  #  enable = true;
+  #  settings = {
+  #    PermitRootLogin = "no";
+  #    PasswordAuthentication = true;
+  #  };
+  #};
 
   # Enable TLP power management daemon
   services.power-profiles-daemon.enable = false; # <- disable built-in Gnome power management daemon
@@ -231,7 +231,7 @@ in
   services.fprintd.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
+  #networking.firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
