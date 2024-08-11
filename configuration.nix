@@ -49,13 +49,8 @@ in
       LC_TIME = "en_US.UTF-8";
     };
   };
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
 
-  # Enable the X11 windowing system.
+  # Windowing system config
   services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true;
@@ -64,8 +59,17 @@ in
     excludePackages = (with pkgs; [
       xterm
     ]);
-
   };
+
+  # Biometric login
+  #security.pam.services = {
+  #  gnome-keyring.fprintAuth = true;
+  #  login.fprintAuth = true;
+  #  polkit-1.fprintAuth = true;
+  #  sudo.fprintAuth = true;
+  #  xscreensaver.fprintAuth = true;
+  #};  
+
   
 
   # Configure keymap in X11
@@ -97,7 +101,11 @@ in
     users.thecomeback = {
       isNormalUser = true;
       description = "gio";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ 
+        "networkmanager"
+        "wheel"
+        #"video"
+      ];
       packages = with pkgs; [
       ];
     };
@@ -231,7 +239,7 @@ in
   services.fprintd.enable = true;
 
   # Open ports in the firewall.
-  #networking.firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
+  networking.firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
