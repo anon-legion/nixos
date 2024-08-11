@@ -116,6 +116,7 @@ in
     enable = true;
     viAlias = true;
     vimAlias = true;
+    vimDiffAlias = true;
     defaultEditor = true;
     configure = {
       packages.myVimPackage = with pkgs.vimPlugins; {
