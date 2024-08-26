@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "thecomeback";
   home.homeDirectory = "/home/thecomeback";
 
@@ -17,10 +15,9 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = with pkgs; [
     jetbrains.rider
+    #neovim
     telegram-desktop
     vscode
 
@@ -73,43 +70,42 @@
     EDITOR = "nvim";
   };
 
-  programs.neovim = {
-    enable = true;
-    package = pkgs.neovim-nightly;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    withNodeJs = true;
-    plugins = with pkgs.vimPlugins; [
-      lazy-nvim
-      which-key-nvim
-    ];
-    extraLuaConfig = ''
-      vim.g.mapleader = " "
-      require("lazy").setup({
-        performance = {
-          reset_packpath = false,
-          rtp = {
-            reset = false,
-          }
-        },
-        dev = {
-          path = "${pkgs.vimUtils.packDir config.home-manager.users.USERNAME.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start",
-        },
-        install = {
-          missing = false,
-        },
-        spec = {
-          { import = "plugins" },
-        },
-      })
-    '';
-  };
+  #programs.neovim = {
+  #  enable = true;
+  #  viAlias = true;
+  #  vimAlias = true;
+  #  vimdiffAlias = true;
+  #  withNodeJs = true;
+  #  plugins = with pkgs.vimPlugins; [
+  #    lazy-nvim
+  #    which-key-nvim
+  #  ];
+  #  extraLuaConfig = ''
+  #    vim.g.mapleader = " "
+  #    require("lazy").setup({
+  #      performance = {
+  #        reset_packpath = false,
+  #        rtp = {
+  #          reset = false,
+  #        }
+  #      },
+  #      dev = {
+  #        path = "${pkgs.vimUtils.packDir programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start",
+  #      },
+  #      install = {
+  #        missing = false,
+  #      },
+  #      spec = {
+  #        { import = "plugins" },
+  #      },
+  #    })
+  #  '';
+  #};
 
-  xdg.configFile."nvim/lua" = {
-    recursive = true;
-    source = ./lua;
-  };
+  #xdg.configFile."nvim/lua" = {
+  #  recursive = true;
+  #  source = ./lua;
+  #};
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

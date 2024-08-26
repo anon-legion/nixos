@@ -15,25 +15,24 @@
 
   outputs = { self, nixpkgs, home-manager, nix-index-database, ... }:
     let
-    	lib = nixpkgs.lib;
-	system = "x86_64-linux";
-	pkgs = nixpkgs.legacyPackages.${system};
+      lib = nixpkgs.lib;
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in {
-    nixosConfigurations = {
-      nixos-goober = lib.nixosSystem {
-        inherit system;
-	modules = [
-	  ./configuration.nix
-          nix-index-database.nixosModules.nix-index
-	];
+      nixosConfigurations = {
+        nixos-goober = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./configuration.nix
+            nix-index-database.nixosModules.nix-index
+          ];
+        };
+      };
+      homeConfigurations = {
+        thecomeback = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./home.nix ];
+        };
       };
     };
-    homeConfigurations = {
-      thecomeback = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-	modules = [ ./home.nix ];
-      };
-    };
-  };
-
 }

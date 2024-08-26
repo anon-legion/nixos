@@ -1,7 +1,3 @@
-#aj Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, ... }:
 
 let
@@ -116,7 +112,6 @@ in
     enable = true;
     viAlias = true;
     vimAlias = true;
-    vimDiffAlias = true;
     defaultEditor = true;
     configure = {
       packages.myVimPackage = with pkgs.vimPlugins; {
@@ -167,11 +162,15 @@ in
     fishPlugins.tide
     fishPlugins.z
     fzf
+    gcc
     htop
+    lazygit
     openssh
+    ripgrep
     tlp
     tmux
     wget
+    wl-clipboard-rs
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ] ++ (with pkgs.gnomeExtensions; [
     blur-my-shell
