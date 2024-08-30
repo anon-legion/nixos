@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  neovim_config = ../.config/nvim;
-in
 {
   home.username = "thecomeback";
   home.homeDirectory = "/home/thecomeback";
@@ -13,7 +10,7 @@ in
 
   home.packages = with pkgs; [
     jetbrains.rider
-    #neovim
+    lunarvim
     telegram-desktop
     vscode
   ];
@@ -23,29 +20,17 @@ in
   home.file = {
   };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    withNodeJs = true;
-    withPython3 = true;
-    plugins = with pkgs.vimPlugins; [
-      LazyVim
-    ];
-  };
-
-  xdg.configFile = {
-    nvim = {
-      enable = false; # do not generate file, allow LazyVim to manage its own config
-      source = "${neovim_config}";
-      recursive = true;
+  home = {
+    sessionPath = [
+      "$HOME/.local/bin"
+    ]; 
+    sessionVariables = {
+      EDITOR = "nvim";
     };
   };
+
+  # Nicely reload system units when changing configs
+  systemd.user.startServices = "sd-switch";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

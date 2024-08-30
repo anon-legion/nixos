@@ -96,22 +96,6 @@ in
     };
   };
 
-  # Neovim
-  programs.neovim = {
-    enable = true;
-    package = pkgs.neovim-unwrapped;
-    viAlias = true;
-    vimAlias = true;
-    defaultEditor = true;
-    configure = {
-      packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [
-          LazyVim
-        ];
-      };
-    };
-  };
-
   # Git
   programs.git = {
     enable = true;
@@ -184,8 +168,6 @@ in
       seahorse # password manager
       xterm
       yelp
-    ]) ++ (with pkgs.gnome; [
-      # for packages that are pkgs.gnome.*
     ]);
   };
 
