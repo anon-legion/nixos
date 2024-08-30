@@ -73,13 +73,14 @@ in
 
   # Enable sound.
   hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
-  security.rtkit.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
@@ -87,13 +88,11 @@ in
     users.thecomeback = {
       isNormalUser = true;
       description = "gio";
-      extraGroups = [ 
+      extraGroups = [
         "networkmanager"
         "wheel"
         #"video"
       ];
-      #packages = with pkgs; [
-      #];
     };
   };
 
@@ -113,14 +112,6 @@ in
     };
   };
 
-  #xdg.configFile = {
-  #  "nvim" = {
-  #    source = "../.config/nvim";
-  #    recursive = true;
-  #  };
-  #};
-
-
   # Git
   programs.git = {
     enable = true;
@@ -131,7 +122,6 @@ in
   };
 
   # Shells
-  environment.shells = with pkgs; [ bash zsh fish ];
   programs = {
     bash = {
       shellAliases = aliasBinds;
@@ -152,49 +142,52 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    bat
-    eza
-    fastfetch
-    fd
-    fishPlugins.fzf-fish
-    fishPlugins.tide
-    fishPlugins.z
-    fzf
-    gcc
-    htop
-    lazygit
-    openssh
-    ripgrep
-    tlp
-    tmux
-    wget
-    wl-clipboard
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
-  ] ++ (with pkgs.gnomeExtensions; [
-    blur-my-shell
-    bluetooth-quick-connect
-    ddterm
-    gtile
-    space-bar
-    vitals
-  ]);
-
-  environment.gnome.excludePackages = (with pkgs; [
-    # for packages that are pkgs.*
-    epiphany # web browser
-    evince # document viewer
-    geary # email reader
-    gnome-connections
-    gnome-console
-    gnome-tour
-    seahorse
-    xterm
-    yelp
-  ]) ++ (with pkgs.gnome; [
-    # for packages that are pkgs.gnome.*
-    gnome-weather
-  ]);
+  environment = {
+    shells = with pkgs; [ bash zsh fish ];
+    systemPackages = with pkgs; [
+      bat
+      eza
+      fastfetch
+      fd
+      fishPlugins.fzf-fish
+      fishPlugins.tide
+      fishPlugins.z
+      fzf
+      gcc
+      htop
+      lazygit
+      openssh
+      ripgrep
+      tlp
+      tmux
+      unzip
+      wget
+      wl-clipboard
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    ] ++ (with pkgs.gnomeExtensions; [
+      blur-my-shell
+      bluetooth-quick-connect
+      ddterm
+      gtile
+      space-bar
+      vitals
+    ]);
+    gnome.excludePackages = (with pkgs; [
+      # for packages that are pkgs.*
+      epiphany # web browser
+      evince # document viewer
+      geary # email reader
+      gnome-connections
+      gnome-console
+      gnome-tour
+      gnome-weather
+      seahorse # password manager
+      xterm
+      yelp
+    ]) ++ (with pkgs.gnome; [
+      # for packages that are pkgs.gnome.*
+    ]);
+  };
 
   fonts = {
     fontDir.enable = true;
@@ -224,35 +217,16 @@ in
   #};
 
   # Enable TLP power management daemon
-  services.power-profiles-daemon.enable = false; # <- disable built-in Gnome power management daemon
+  services.power-profiles-daemon.enable = false; # disable built-in Gnome power management daemon
   services.tlp.enable = true;
 
+  # Fingerprint sensor
   services.fprintd.enable = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05";
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
