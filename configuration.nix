@@ -10,6 +10,7 @@ let
     lsa = "exa -a --icons";
     lt = "exa --tree --icons";
     lta = "exa -a --tree --icons";
+    vim = "lvim";
   };
 in
 {
@@ -51,6 +52,10 @@ in
     };
   };
 
+  systemd.tmpfiles.rules = [
+    "d /home/thecomeback/.config/lvim 0755 thecomeback users" # lvim configs
+  ];
+
   # Windowing system config
   services.xserver = {
     enable = true;
@@ -64,6 +69,8 @@ in
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  hardware.enableAllFirmware = true;
 
   # Bluetooth
   hardware.bluetooth = {
@@ -79,7 +86,7 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
+    #jack.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
