@@ -14,16 +14,21 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
     ];
 
   # Keep linux kernel on latest version
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    consoleLogLevel = 0;
+    kernelParams = ["quiet" "splash"];
+    initrd.verbose = false;
+    plymouth.enable = true; # animated boot splash screen
+    loader.timeout = 3; 
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+  };
 
   networking.hostName = "nixos-goober";
   networking.networkmanager.enable = true;
@@ -49,34 +54,22 @@ in
   # Windowing system config
   services.xserver = {
     enable = true;
+    xkb.layout = "us";
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
-    xkb.layout = "us";
     excludePackages = (with pkgs; [
       xterm
     ]);
   };
 
-  # Biometric login
-  #security.pam.services = {
-  #  gnome-keyring.fprintAuth = true;
-  #  login.fprintAuth = true;
-  #  polkit-1.fprintAuth = true;
-  #  sudo.fprintAuth = true;
-  #  xscreensaver.fprintAuth = true;
-  #};  
-
-  
-
-  # Configure keymap in X11
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   # Enable sound.
   hardware.pulseaudio.enable = false;
@@ -87,9 +80,6 @@ in
     pulse.enable = true;
   };
   security.rtkit.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
@@ -102,14 +92,15 @@ in
         "wheel"
         #"video"
       ];
-      packages = with pkgs; [
-      ];
+      #packages = with pkgs; [
+      #];
     };
   };
 
   # Neovim
   programs.neovim = {
     enable = true;
+    package = pkgs.neovim-unwrapped;
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
@@ -121,6 +112,14 @@ in
       };
     };
   };
+
+  #xdg.configFile = {
+  #  "nvim" = {
+  #    source = "../.config/nvim";
+  #    recursive = true;
+  #  };
+  #};
+
 
   # Git
   programs.git = {
@@ -170,7 +169,7 @@ in
     tlp
     tmux
     wget
-    wl-clipboard-rs
+    wl-clipboard
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ] ++ (with pkgs.gnomeExtensions; [
     blur-my-shell
@@ -213,14 +212,6 @@ in
     };
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -244,11 +235,6 @@ in
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
@@ -268,7 +254,10 @@ in
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true;
+  };
 
 }
 
