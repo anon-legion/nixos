@@ -48,15 +48,28 @@
     plugins = with pkgs.vimPlugins; [
       LazyVim
     ];
+
+    extraPackages = with pkgs; [
+      lua-language-server
+      markdownlint-cli
+      nixd
+      nodePackages.bash-language-server
+      nodePackages.prettier
+      #shellcheck
+      stylua
+      vscode-langservers-extracted
+      yaml-language-server
+    ];
   };
 
   xdg.configFile = {
     nvim = {
-      #enable = false; # do not generate file, allow LazyVim to manage its own config
-      source = ../.config/nvim;
+      enable = false; # do not generate file, allow LazyVim to manage its own config
+      source = ./files/nvim;
       recursive = true;
     };
   };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

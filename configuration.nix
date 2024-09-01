@@ -10,7 +10,6 @@ let
     lsa = "exa -a --icons";
     lt = "exa --tree --icons";
     lta = "exa -a --tree --icons";
-    vim = "lvim";
   };
 in
 {
