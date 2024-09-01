@@ -64,7 +64,7 @@
 
   xdg.configFile = {
     nvim = {
-      enable = false; # do not generate file, allow LazyVim to manage its own config
+      enable = false;
       source = ./files/nvim;
       recursive = true;
     };
