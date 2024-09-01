@@ -29,6 +29,34 @@
     };
   };
 
+  gtk = {
+    enable = true;
+    font = {
+      name = "JetBrainsMono Nerd Font";
+    };
+  };
+
+  # Neovim
+  programs.neovim = {
+    enable = true;
+    package = pkgs.neovim-unwrapped;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    withNodeJs = true;
+    withPython3 = true;
+    plugins = with pkgs.vimPlugins; [
+      LazyVim
+    ];
+  };
+
+  xdg.configFile = {
+    nvim = {
+      #enable = false; # do not generate file, allow LazyVim to manage its own config
+      source = ../.config/nvim;
+      recursive = true;
+    };
+  };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

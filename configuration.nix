@@ -19,9 +19,8 @@ in
       ./hardware-configuration.nix
     ];
 
-  # Keep linux kernel on latest version
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    boot = {
+    kernelPackages = pkgs.linuxPackages_latest; # Keep linux kernel on latest version
     consoleLogLevel = 0;
     kernelParams = ["quiet" "splash"];
     initrd.verbose = false;
