@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "thecomeback";
@@ -9,8 +9,12 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    devbox
+    dotnet-sdk_8
     jetbrains.rider
     lunarvim
+    nodejs
+    nodePackages_latest.pnpm
     telegram-desktop
     vscode
   ];
@@ -23,7 +27,7 @@
   home = {
     sessionPath = [
       "$HOME/.local/bin"
-    ]; 
+    ];
     sessionVariables = {
       EDITOR = "nvim";
     };
@@ -46,17 +50,28 @@
     withNodeJs = true;
     withPython3 = true;
     plugins = with pkgs.vimPlugins; [
+      conform-nvim
       LazyVim
+      neotest-dotnet
+      none-ls-nvim
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-virtual-text
+      omnisharp-extended-lsp-nvim
     ];
 
     extraPackages = with pkgs; [
+      bash-language-server
+      csharpier
       lua-language-server
       markdownlint-cli
+      netcoredbg
       nixd
-      nodePackages.bash-language-server
+      nodePackages.eslint
       nodePackages.prettier
-      #shellcheck
+      omnisharp-roslyn
       stylua
+      typescript-language-server
       vscode-langservers-extracted
       yaml-language-server
     ];

@@ -14,6 +14,7 @@ return {
     },
     ensure_installed = {
       "bash",
+      "c_sharp",
       "dockerfile",
       "json",
       "jsonc",
