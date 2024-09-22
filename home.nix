@@ -1,20 +1,22 @@
 { pkgs, ... }:
 
 {
-  home.username = "thecomeback";
-  home.homeDirectory = "/home/thecomeback";
-
-  home.stateVersion = "24.05";
+  home = {
+    username = "thecomeback";
+    homeDirectory = "/home/thecomeback";
+    stateVersion = "24.05";
+  };
 
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    csharpier
     devbox
     dotnet-sdk_8
     jetbrains.rider
-    lunarvim
     nodejs
     nodePackages_latest.pnpm
+    omnisharp-roslyn
     telegram-desktop
     vscode
   ];
@@ -62,14 +64,12 @@
 
     extraPackages = with pkgs; [
       bash-language-server
-      csharpier
       lua-language-server
       markdownlint-cli
       netcoredbg
       nixd
       nodePackages.eslint
       nodePackages.prettier
-      omnisharp-roslyn
       stylua
       typescript-language-server
       vscode-langservers-extracted

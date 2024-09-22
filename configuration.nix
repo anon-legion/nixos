@@ -50,9 +50,9 @@ in
     };
   };
 
-  systemd.tmpfiles.rules = [
-    "d /home/thecomeback/.config/lvim 0755 thecomeback users" # lvim configs
-  ];
+  #systemd.tmpfiles.rules = [
+  #  "d /home/thecomeback/.config/lvim 0755 thecomeback users" # lvim configs
+  #];
 
   # Windowing system config
   services.xserver = {
@@ -175,6 +175,7 @@ in
       yelp
     ]);
   };
+  documentation.nixos.enable = false;
 
   fonts = {
     fontDir.enable = true;
@@ -208,17 +209,31 @@ in
   services.tlp.enable = true;
 
   # Fingerprint sensor
-  services.fprintd.enable = true;
+  services.fprintd = {
+    enable = true;
+    package = pkgs.fprintd.overrideAttrs {
+      mesonCheckFlags = [
+        "--no-suite"
+        "fprintd:TestPamFprintd"
+      ];
+    };
+  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
 
   system.stateVersion = "24.05";
 
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    auto-optimise-store = true;
+  nix = {
+    settings = {
+        experimental-features = [ "nix-command" "flakes" ];
+        auto-optimise-store = true;
+      };
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than +5";
+    };
   };
-
 }
 
