@@ -29,6 +29,7 @@
   home = {
     sessionPath = [
       "$HOME/.local/bin"
+      "$HOME/.dotnet/tools"
     ];
     sessionVariables = {
       EDITOR = "nvim";
