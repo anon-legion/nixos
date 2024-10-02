@@ -10,7 +10,6 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    csharpier
     devbox
     dotnet-sdk_8
     jetbrains.rider
@@ -28,10 +27,11 @@
 
   home = {
     sessionPath = [
-      "$HOME/.local/bin"
+      #"$HOME/.local/bin"
       "$HOME/.dotnet/tools"
     ];
     sessionVariables = {
+      DOTNET_ROOT = "/nix/store/xbnpbibdqy8rivl28g613nh9vlpq0jrg-dotnet-sdk-8.0.401";
       EDITOR = "nvim";
     };
   };
@@ -42,6 +42,9 @@
       name = "JetBrainsMono Nerd Font";
     };
   };
+
+  # Allow home-manager to manage fish configs
+  programs.fish.enable = true;
 
   # Neovim
   programs.neovim = {
