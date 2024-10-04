@@ -29,8 +29,11 @@ in
     loader.efi.canTouchEfiVariables = true;
   };
 
-  networking.hostName = "nixos-goober";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos-goober";
+    networkmanager.enable = true;
+    firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
+  };
 
   time.timeZone = "Asia/Singapore";
 
@@ -49,10 +52,6 @@ in
       LC_TIME = "en_US.UTF-8";
     };
   };
-
-  #systemd.tmpfiles.rules = [
-  #  "d /home/thecomeback/.config/lvim 0755 thecomeback users" # lvim configs
-  #];
 
   # Windowing system config
   services.xserver = {
@@ -84,7 +83,7 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    #jack.enable = true;
+    jack.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -138,6 +137,7 @@ in
       eza
       fastfetch
       fd
+      fishPlugins.bass
       fishPlugins.fzf-fish
       fishPlugins.tide
       fishPlugins.z
@@ -170,7 +170,7 @@ in
       gnome-console
       gnome-tour
       gnome-weather
-      seahorse # password manager
+      #seahorse # password manager
       xterm
       yelp
     ]);
@@ -186,23 +186,21 @@ in
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [  "JetBrainsMono Nerd Font" ];
+        serif = [  "FiraCode Nerd Font" ];
         sansSerif = [  "JetBrainsMono Nerd Font" ];
-        monospace = [  "JetBrainsMono Nerd Font Mono" ];
+        monospace = [  "JetBrainsMono Nerd Font" ];
       };
     };
   };
 
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
-  #services.openssh = {
-  #  enable = true;
-  #  settings = {
-  #    PermitRootLogin = "no";
-  #    PasswordAuthentication = true;
-  #  };
-  #};
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = true;
+    };
+  };
 
   # Enable TLP power management daemon
   services.power-profiles-daemon.enable = false; # disable built-in Gnome power management daemon
@@ -218,9 +216,6 @@ in
       ];
     };
   };
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
 
   system.stateVersion = "24.05";
 

@@ -13,6 +13,7 @@
     devbox
     dotnet-sdk_8
     jetbrains.rider
+    kitty
     nodejs
     nodePackages_latest.pnpm
     omnisharp-roslyn
@@ -44,7 +45,12 @@
   };
 
   # Allow home-manager to manage fish configs
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+  };
 
   # Neovim
   programs.neovim = {
