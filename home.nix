@@ -13,10 +13,10 @@
     devbox
     dotnet-sdk_8
     jetbrains.rider
-    kitty
     nodejs
     nodePackages_latest.pnpm
     omnisharp-roslyn
+    spotify
     telegram-desktop
     vscode
   ];
@@ -40,7 +40,7 @@
   gtk = {
     enable = true;
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "FiraCode Nerd Font";
     };
   };
 
