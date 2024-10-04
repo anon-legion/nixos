@@ -134,6 +134,8 @@ in
     shells = with pkgs; [ bash zsh fish ];
     systemPackages = with pkgs; [
       bat
+      dracula-icon-theme
+      dracula-theme
       eza
       fastfetch
       fd

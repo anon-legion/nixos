@@ -15,7 +15,6 @@
     jetbrains.rider
     nodejs
     nodePackages_latest.pnpm
-    omnisharp-roslyn
     spotify
     telegram-desktop
     vscode
@@ -28,7 +27,7 @@
 
   home = {
     sessionPath = [
-      #"$HOME/.local/bin"
+      "$HOME/.local/share/nvim/mason/bin"
       "$HOME/.dotnet/tools"
     ];
     sessionVariables = {
@@ -80,6 +79,7 @@
       nixd
       nodePackages.eslint
       nodePackages.prettier
+      #omnisharp-roslyn
       stylua
       typescript-language-server
       vscode-langservers-extracted

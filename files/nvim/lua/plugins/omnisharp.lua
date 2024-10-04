@@ -1,4 +1,4 @@
 return {
-  "nvim-neo-tree/neo-tree.nvim",
+  "Hoffs/omnisharp-extended-lsp.nvim",
   lazy = true,
 }
