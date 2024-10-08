@@ -164,7 +164,6 @@ in
       vitals
     ]);
     gnome.excludePackages = (with pkgs; [
-      # for packages that are pkgs.*
       epiphany # web browser
       evince # document viewer
       geary # email reader
@@ -223,13 +222,13 @@ in
 
   nix = {
     settings = {
-        experimental-features = [ "nix-command" "flakes" ];
-        auto-optimise-store = true;
-      };
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+    };
     gc = {
       automatic = true;
-      dates = "daily";
-      options = "--delete-older-than +5";
+      dates = "weekly";
+      options = "--delete-older-than 30d";
     };
   };
 }
