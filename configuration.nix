@@ -4,6 +4,7 @@ let
   aliasBinds = {
     ".." = "cd ..";
     g = "git";
+    ff = "fastfetch";
     ll = "exa -lhg --icons";
     lla = "exa -lhga --icons";
     ls = "exa --icons";
@@ -13,26 +14,26 @@ let
   };
 in
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
-    boot = {
-    kernelPackages = pkgs.linuxPackages_latest; # Keep linux kernel on latest version
+  boot = {
     consoleLogLevel = 0;
+    kernelPackages = pkgs.linuxPackages_latest; # Keep linux kernel on latest version
     kernelParams = ["quiet" "splash"];
+    resumeDevice = "/dev/disk/by-partlabel/swap"; # Fix hibernate issue
     initrd.verbose = false;
     plymouth.enable = true; # animated boot splash screen
-    loader.timeout = 3; 
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      timeout = 3;
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    }; 
   };
 
   networking = {
     hostName = "nixos-goober";
-    networkmanager.enable = true;
     firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
+    networkmanager.enable = true;
   };
 
   time.timeZone = "Asia/Singapore";
@@ -57,15 +58,12 @@ in
   services.xserver = {
     enable = true;
     xkb.layout = "us";
-    desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
     excludePackages = (with pkgs; [
       xterm
     ]);
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   hardware.enableAllFirmware = true;
 
@@ -134,8 +132,7 @@ in
     shells = with pkgs; [ bash zsh fish ];
     systemPackages = with pkgs; [
       bat
-      dracula-icon-theme
-      dracula-theme
+      #dracula-theme
       eza
       fastfetch
       fd
@@ -145,8 +142,10 @@ in
       fishPlugins.z
       fzf
       gcc
+      gdm-settings
       htop
       lazygit
+      onlyoffice-desktopeditors
       openssh
       ripgrep
       tlp
@@ -156,10 +155,17 @@ in
       wl-clipboard
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ] ++ (with pkgs.gnomeExtensions; [
+      advanced-alttab-window-switcher
+      another-window-session-manager
       blur-my-shell
       bluetooth-quick-connect
       ddterm
-      gtile
+      forge
+      gsconnect
+      logo-menu
+      places-status-indicator
+      privacy-settings-menu
+      quick-settings-tweaker
       space-bar
       vitals
     ]);
@@ -217,6 +223,9 @@ in
       ];
     };
   };
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 
   system.stateVersion = "24.05";
 
