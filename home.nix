@@ -13,10 +13,12 @@
     devbox
     dotnet-sdk_8
     jetbrains.rider
+    keepassxc
     nodejs
     nodePackages_latest.pnpm
     spotify
     telegram-desktop
+    tor-browser
     vscode
   ];
 

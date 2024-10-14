@@ -20,7 +20,7 @@ in
     consoleLogLevel = 0;
     kernelPackages = pkgs.linuxPackages_latest; # Keep linux kernel on latest version
     kernelParams = ["quiet" "splash"];
-    resumeDevice = "/dev/disk/by-partlabel/swap"; # Fix hibernate issue
+    #resumeDevice = "/dev/disk/by-partlabel/swap"; # Fix hibernate issue
     initrd.verbose = false;
     plymouth.enable = true; # animated boot splash screen
     loader = {
@@ -125,6 +125,12 @@ in
   # Firefox
   programs.firefox.enable = true;
 
+  # GSConnect
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -132,7 +138,7 @@ in
     shells = with pkgs; [ bash zsh fish ];
     systemPackages = with pkgs; [
       bat
-      #dracula-theme
+      dracula-theme
       eza
       fastfetch
       fd
@@ -142,7 +148,6 @@ in
       fishPlugins.z
       fzf
       gcc
-      gdm-settings
       htop
       lazygit
       onlyoffice-desktopeditors
