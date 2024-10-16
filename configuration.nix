@@ -160,21 +160,19 @@ in
       wl-clipboard
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ] ++ (with pkgs.gnomeExtensions; [
-      advanced-alttab-window-switcher
-      another-window-session-manager
       blur-my-shell
       bluetooth-quick-connect
       ddterm
-      forge
       gsconnect
       logo-menu
       places-status-indicator
       privacy-settings-menu
       quick-settings-tweaker
       space-bar
+      unmess
       vitals
     ]);
-    gnome.excludePackages = (with pkgs; [
+    gnome.excludePackages = with pkgs; [
       epiphany # web browser
       evince # document viewer
       geary # email reader
@@ -185,7 +183,7 @@ in
       #seahorse # password manager
       xterm
       yelp
-    ]);
+    ];
   };
   documentation.nixos.enable = false;
 
