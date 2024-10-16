@@ -19,6 +19,7 @@
     spotify
     telegram-desktop
     tor-browser
+    viber
     vscode
   ];
 
