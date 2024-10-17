@@ -16,10 +16,10 @@
     keepassxc
     nodejs
     nodePackages_latest.pnpm
+    qbittorrent
     spotify
     telegram-desktop
     tor-browser
-    viber
     vscode
   ];
 
