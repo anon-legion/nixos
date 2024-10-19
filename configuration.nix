@@ -158,7 +158,14 @@ in
       unzip
       wget
       wl-clipboard
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ 
+          "FiraCode"
+          "JetBrainsMono"
+          "Iosevka"
+          "IosevkaTerm"
+          "IosevkaTermSlab"
+        ]; 
+      })
     ] ++ (with pkgs.gnomeExtensions; [
       blur-my-shell
       bluetooth-quick-connect
@@ -169,7 +176,6 @@ in
       privacy-settings-menu
       quick-settings-tweaker
       space-bar
-      unmess
       vitals
     ]);
     gnome.excludePackages = with pkgs; [
@@ -191,13 +197,20 @@ in
     fontDir.enable = true;
     enableDefaultPackages = true;
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ 
+          "FiraCode"
+          "JetBrainsMono"
+          "Iosevka"
+          "IosevkaTerm"
+          "IosevkaTermSlab"
+        ]; 
+      })
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [  "FiraCode Nerd Font" ];
-        sansSerif = [  "JetBrainsMono Nerd Font" ];
+        serif = [  "IosevkaTermSlab Nerd Font" ];
+        sansSerif = [  "FiraCode Nerd Font" ];
         monospace = [  "JetBrainsMono Nerd Font" ];
       };
     };
