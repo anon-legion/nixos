@@ -138,7 +138,12 @@ in
     shells = with pkgs; [ bash zsh fish ];
     systemPackages = with pkgs; [
       bat
+      darktable
       dracula-theme
+      #gimp
+      gimp-with-plugins
+      gss
+      gthumb
       eza
       fastfetch
       fd
@@ -161,7 +166,6 @@ in
       (nerdfonts.override { fonts = [ 
           "FiraCode"
           "JetBrainsMono"
-          "Iosevka"
           "IosevkaTerm"
           "IosevkaTermSlab"
         ]; 
@@ -200,7 +204,6 @@ in
       (nerdfonts.override { fonts = [ 
           "FiraCode"
           "JetBrainsMono"
-          "Iosevka"
           "IosevkaTerm"
           "IosevkaTermSlab"
         ]; 

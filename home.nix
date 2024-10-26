@@ -10,8 +10,10 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    bruno
     devbox
     dotnet-sdk_8
+    hoppscotch
     jetbrains.rider
     keepassxc
     nodejs
