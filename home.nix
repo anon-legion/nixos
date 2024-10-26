@@ -16,6 +16,7 @@
     hoppscotch
     jetbrains.rider
     keepassxc
+    kdePackages.kleopatra
     nodejs
     nodePackages_latest.pnpm
     qbittorrent

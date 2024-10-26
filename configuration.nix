@@ -155,6 +155,7 @@ in
       gcc
       htop
       lazygit
+      libsecret
       onlyoffice-desktopeditors
       openssh
       ripgrep
