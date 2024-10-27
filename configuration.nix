@@ -138,9 +138,9 @@ in
     shells = with pkgs; [ bash zsh fish ];
     systemPackages = with pkgs; [
       bat
+      btop
       darktable
       dracula-theme
-      #gimp
       gimp-with-plugins
       gss
       gthumb
@@ -158,8 +158,10 @@ in
       libsecret
       onlyoffice-desktopeditors
       openssh
+      pinentry-all # provides a console to enter a passphrase when gpg is run and needs it
       ripgrep
       tlp
+      tlrc
       tmux
       unzip
       wget
