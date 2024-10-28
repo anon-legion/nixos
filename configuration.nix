@@ -156,10 +156,13 @@ in
       htop
       lazygit
       libsecret
+      lollypop # replace rhythmbox and gnome-music
       onlyoffice-desktopeditors
       openssh
       pinentry-all # provides a console to enter a passphrase when gpg is run and needs it
+      rhythmbox
       ripgrep
+      shotwell # replace gthumb, darktable, and gnome-photos
       tlp
       tlrc
       tmux
