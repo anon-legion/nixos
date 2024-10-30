@@ -141,9 +141,9 @@ in
       beauty-line-icon-theme
       btop
       candy-icons
-      dracula-icon-theme
       dracula-theme
       gimp-with-plugins
+      gnome-tweaks
       gss
       gthumb
       eza
@@ -182,7 +182,6 @@ in
       bluetooth-quick-connect
       ddterm
       gsconnect
-      just-perfection
       logo-menu
       places-status-indicator
       privacy-settings-menu
