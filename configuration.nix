@@ -138,8 +138,10 @@ in
     shells = with pkgs; [ bash zsh fish ];
     systemPackages = with pkgs; [
       bat
+      beauty-line-icon-theme
       btop
-      darktable
+      candy-icons
+      dracula-icon-theme
       dracula-theme
       gimp-with-plugins
       gss
@@ -156,13 +158,12 @@ in
       htop
       lazygit
       libsecret
-      lollypop # replace rhythmbox and gnome-music
+      lollypop
       onlyoffice-desktopeditors
       openssh
       pinentry-all # provides a console to enter a passphrase when gpg is run and needs it
-      rhythmbox
+      sweet-folders
       ripgrep
-      shotwell # replace gthumb, darktable, and gnome-photos
       tlp
       tlrc
       tmux
@@ -181,6 +182,7 @@ in
       bluetooth-quick-connect
       ddterm
       gsconnect
+      just-perfection
       logo-menu
       places-status-indicator
       privacy-settings-menu
@@ -194,6 +196,7 @@ in
       geary # email reader
       gnome-connections
       gnome-console
+      gnome-music
       gnome-tour
       gnome-weather
       #seahorse # password manager

@@ -11,6 +11,7 @@
 
   home.packages = with pkgs; [
     bruno
+    dbeaver-bin
     devbox
     dotnet-sdk_8
     hoppscotch
