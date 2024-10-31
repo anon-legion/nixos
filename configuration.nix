@@ -159,11 +159,13 @@ in
       lazygit
       libsecret
       lollypop
+      menulibre
       onlyoffice-desktopeditors
       openssh
       pinentry-all # provides a console to enter a passphrase when gpg is run and needs it
       sweet-folders
       ripgrep
+      rofi-wayland-unwrapped
       tlp
       tlrc
       tmux
@@ -220,9 +222,9 @@ in
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [  "IosevkaTermSlab Nerd Font" ];
-        sansSerif = [  "FiraCode Nerd Font" ];
-        monospace = [  "JetBrainsMono Nerd Font" ];
+        serif = [ "IosevkaTermSlab Nerd Font Propo" ];
+        sansSerif = [ "FiraCode Nerd Font" ];
+        monospace = [ "JetBrainsMono Nerd Font Mono" ];
       };
     };
   };
