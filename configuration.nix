@@ -142,7 +142,6 @@ in
       btop
       candy-icons
       dracula-theme
-      gimp-with-plugins
       gnome-tweaks
       gss
       gthumb
@@ -156,6 +155,7 @@ in
       fzf
       gcc
       htop
+      inkscape-with-extensions
       lazygit
       libsecret
       lollypop
@@ -165,7 +165,6 @@ in
       pinentry-all # provides a console to enter a passphrase when gpg is run and needs it
       sweet-folders
       ripgrep
-      rofi-wayland-unwrapped
       tlp
       tlrc
       tmux
