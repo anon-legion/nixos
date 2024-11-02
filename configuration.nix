@@ -86,7 +86,7 @@ in
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
-    defaultUserShell = pkgs.fish;
+    defaultUserShell = pkgs.nushell;
     users.thecomeback = {
       isNormalUser = true;
       description = "gio";
@@ -120,6 +120,10 @@ in
       enable = true;
       shellAliases = aliasBinds;
     };
+    nushell = {
+      enable = true;
+      #shellAliases = aliasBinds;
+    };
   };
 
   # Firefox
@@ -135,7 +139,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment = {
-    shells = with pkgs; [ bash zsh fish ];
+    shells = with pkgs; [ bash zsh fish nushell];
     systemPackages = with pkgs; [
       bat
       beauty-line-icon-theme
@@ -167,10 +171,11 @@ in
       ripgrep
       tlp
       tlrc
-      tmux
+      tmux # tldr in rust
       unzip
       wget
       wl-clipboard
+      zoxide
       (nerdfonts.override { fonts = [ 
           "FiraCode"
           "JetBrainsMono"
