@@ -52,35 +52,75 @@
     };
   };
 
-  # Starship shell prompt
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = {
-      aws.style = "bold #ffb86c";
-      cmd_duration.style = "bold #f1fa8c";
-      directory.style = "bold #50fa7b";
-      hostname.style = "bold #ff5555";
-      git_branch.style = "bold #ff79c6";
-      git_status.style = "bold #ff5555";
-      username = {
-        format = "[$user]($style) on ";
-        style_user = "bold #bd93f9";
-      };
-      character = {
-        success_symbol = "[λ](bold #f8f8f2)";
-        error_symbol = "[λ](bold #ff5555)";
+  # CLI
+  programs = {
+    #atuin = {  # shell history
+    #  enable = true;
+    #  enableNushellIntegration = true;
+    #};
+    carapace = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+    eza = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+      '';
+    };
+    keychain = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+    nushell = {
+      enable = true;
+      extraEnv = ''
+        mkdir ~/.cache/starship
+        starship init nu | save -f ~/.cache/starship/init.nu
+      '';
+      extraConfig = ''
+        use ~/.cache/starship/init.nu
+      '';
+    };
+    starship = {
+      enable = true;
+      #enableFishIntegration = true;
+      enableNushellIntegration = true;
+      settings = {
+        format = ''
+      [](bg:#030B16 fg:#7DF9AA) [󰀵 ](bg:#7DF9AA fg:#090c0c) [](fg:#7DF9AA bg:#1C3A5E) $time [](fg:#1C3A5E bg:#3B76F0) $directory [](fg:#3B76F0 bg:#FCF392) $git_branch $git_status $git_metrics [](fg:#FCF392 bg:#030B16) $character
+        '';
+        aws.style = "bold #ffb86c";
+        cmd_duration.style = "bold #f1fa8c";
+        directory.style = "bold #50fa7b";
+        hostname.style = "bold #ff5555";
+        git_branch.style = "bold #ff79c6";
+        git_status.style = "bold #ff5555";
+        username = {
+          format = "[$user]($style) on ";
+          style_user = "bold #bd93f9";
+        };
+        character = {
+          format = "$symbol ";
+          vicmd_symbol = "[❮](bold green)";
+          disabled = false;
+          success_symbol = "[➜](bold green) ";
+          error_symbol = "[✗](bold red) ";
+        };
       };
     };
-  };
-
-  # Allow home-manager to manage fish configs
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-      starship init fish | source
-    '';
+    #yazi = { # terminal file manager
+    #  enable = true;
+    #  enableNushellIntegration = true;
+    #};
+    zoxide = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
   };
 
   # Neovim
