@@ -86,7 +86,7 @@ in
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
-    defaultUserShell = pkgs.nushell;
+    defaultUserShell = pkgs.fish;
     users.thecomeback = {
       isNormalUser = true;
       description = "gio";
@@ -119,10 +119,6 @@ in
     fish = {
       enable = true;
       shellAliases = aliasBinds;
-    };
-    nushell = {
-      enable = true;
-      #shellAliases = aliasBinds;
     };
   };
 
