@@ -21,6 +21,8 @@
     kdePackages.kleopatra
     nodejs
     nodePackages_latest.pnpm
+    nushellPlugins.skim
+    nushellPlugins.units
     obsidian
     qbittorrent
     spotify
@@ -54,10 +56,11 @@
 
   # CLI
   programs = {
-    #atuin = {  # shell history
-    #  enable = true;
-    #  enableNushellIntegration = true;
-    #};
+    atuin = {  # shell history
+      enable = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
+    };
     carapace = {
       enable = true;
       enableNushellIntegration = true;
@@ -66,11 +69,21 @@
     #  enable = true;
     #  enableNushellIntegration = true;
     #};
-    #keychain = {
-    #  enable = true;
-    #  enableNushellIntegration = true;
-    #};
-    nushell.enable = true;
+    keychain = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+    nushell ={
+      enable = true;
+      shellAliases = {
+        g = "git";
+        ff = "fastfetch";
+        ll = "exa -lhg --icons";
+        lla = "exa -lhga --icons";
+        lt = "exa --tree --icons";
+        lta = "exa -a --tree --icons";
+      };
+    };
     oh-my-posh = {
       enable = true;
       enableFishIntegration = false;
