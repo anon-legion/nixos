@@ -112,12 +112,7 @@ in
     bash = {
       shellAliases = aliasBinds;
     };
-    zsh = {
-      enable = true;
-      shellAliases = aliasBinds;
-    };
     fish = {
-      enable = true;
       shellAliases = aliasBinds;
     };
   };
@@ -135,7 +130,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment = {
-    shells = with pkgs; [ bash zsh fish nushell];
+    shells = with pkgs; [ bash fish nushell];
     systemPackages = with pkgs; [
       bat
       beauty-line-icon-theme
@@ -151,7 +146,7 @@ in
       fishPlugins.bass
       fishPlugins.fzf-fish
       fishPlugins.tide
-      fishPlugins.z
+      #fishPlugins.z
       fzf
       gcc
       htop
@@ -170,7 +165,7 @@ in
       tmux # tldr in rust
       unzip
       wget
-      wl-clipboard
+      wl-clipboard-rs
       zoxide
       (nerdfonts.override { fonts = [ 
           "FiraCode"
