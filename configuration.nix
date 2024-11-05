@@ -113,6 +113,7 @@ in
       shellAliases = aliasBinds;
     };
     fish = {
+      enable = true;
       shellAliases = aliasBinds;
     };
   };
@@ -165,7 +166,7 @@ in
       tmux # tldr in rust
       unzip
       wget
-      wl-clipboard-rs
+      wl-clipboard
       zoxide
       (nerdfonts.override { fonts = [ 
           "FiraCode"
