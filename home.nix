@@ -56,39 +56,30 @@
 
   # CLI
   programs = {
-    atuin = {  # shell history
+    atuin = {
       enable = true;
       enableFishIntegration = true;
-      enableNushellIntegration = true;
-    };
-    carapace = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
-    #eza = {
-    #  enable = true;
-    #  enableNushellIntegration = true;
-    #};
-    keychain = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
-    nushell ={
-      enable = true;
-      shellAliases = {
-        g = "git";
-        ff = "fastfetch";
-        ll = "exa -lhg --icons";
-        lla = "exa -lhga --icons";
-        lt = "exa --tree --icons";
-        lta = "exa -a --tree --icons";
+      settings = {
+        enter_accept = false;
+        inline_height = 10;
+        invert = true;
+        store_failed = false;
       };
     };
-    oh-my-posh = {
+    eza = {
       enable = true;
-      enableFishIntegration = false;
-      enableNushellIntegration = true;
-      useTheme = "powerlevel10k_rainbow";
+      git = true;
+      icons = true;
+    };
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+      '';
+    };
+    keychain = {
+      enable = true;
+      enableFishIntegration = true;
     };
     #yazi = { # terminal file manager
     #  enable = true;
@@ -97,16 +88,7 @@
     zoxide = {
       enable = true;
       enableFishIntegration = true;
-      enableNushellIntegration = true;
     };
-  };
-
-  # Fish
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-    '';
   };
 
   # Neovim

@@ -5,12 +5,12 @@ let
     ".." = "cd ..";
     g = "git";
     ff = "fastfetch";
-    ll = "exa -lhg --icons";
-    lla = "exa -lhga --icons";
-    ls = "exa --icons";
-    lsa = "exa -a --icons";
-    lt = "exa --tree --icons";
-    lta = "exa -a --tree --icons";
+    ll = "exa -lhgb";
+    lla = "exa -lhgab";
+    ls = "exa";
+    lsa = "exa -a";
+    lt = "exa --tree";
+    lta = "exa -a --tree";
   };
 in
 {
