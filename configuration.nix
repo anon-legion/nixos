@@ -2,15 +2,14 @@
 
 let
   aliasBinds = {
-    ".." = "cd ..";
     g = "git";
     ff = "fastfetch";
-    ll = "exa -lhgb";
-    lla = "exa -lhgab";
-    ls = "exa";
-    lsa = "exa -a";
-    lt = "exa --tree";
-    lta = "exa -a --tree";
+    ll = "exa -lhgb --icons --git";
+    lla = "exa -lhgab --icons --git";
+    ls = "exa --icons";
+    lsa = "exa -a --icons";
+    lt = "exa --tree --icons";
+    lta = "exa -a --tree --icons";
   };
 in
 {

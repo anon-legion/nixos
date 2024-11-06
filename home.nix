@@ -61,16 +61,12 @@
       enableFishIntegration = true;
       settings = {
         enter_accept = false;
-        inline_height = 10;
+        inline_height = 30;
         invert = true;
         store_failed = false;
       };
     };
-    eza = {
-      enable = true;
-      git = true;
-      icons = true;
-    };
+    #eza.enable = true;
     fish = {
       enable = true;
       interactiveShellInit = ''
