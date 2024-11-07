@@ -21,8 +21,6 @@
     kdePackages.kleopatra
     nodejs
     nodePackages_latest.pnpm
-    nushellPlugins.skim
-    nushellPlugins.units
     obsidian
     qbittorrent
     spotify
@@ -45,6 +43,9 @@
     sessionVariables = {
       DOTNET_ROOT = "/nix/store/xbnpbibdqy8rivl28g613nh9vlpq0jrg-dotnet-sdk-8.0.401";
       EDITOR = "nvim";
+    };
+    pointerCursor = {
+      size = 24;
     };
   };
 
