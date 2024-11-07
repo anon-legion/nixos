@@ -10,6 +10,7 @@ let
     lsa = "exa -a --icons";
     lt = "exa --tree --icons";
     lta = "exa -a --tree --icons";
+    open = "xdg-open";
   };
 in
 {
@@ -124,6 +125,13 @@ in
   programs.kdeconnect = {
     enable = true;
     package = pkgs.gnomeExtensions.gsconnect;
+  };
+
+  # nh nix helper
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 5";
   };
 
   # Allow unfree packages
@@ -258,11 +266,11 @@ in
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
     };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
-    };
+    #gc = {
+    #  automatic = true;
+    #  dates = "weekly";
+    #  options = "--delete-older-than 30d";
+    #};
   };
 }
 

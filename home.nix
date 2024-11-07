@@ -26,6 +26,7 @@
     obsidian
     qbittorrent
     spotify
+    station
     telegram-desktop
     tor-browser
     vscode
@@ -61,6 +62,7 @@
       enableFishIntegration = true;
       settings = {
         enter_accept = false;
+        filter_mode_shell_up_key_binding = "directory";
         inline_height = 30;
         invert = true;
         store_failed = false;
