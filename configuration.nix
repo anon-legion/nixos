@@ -4,12 +4,12 @@ let
   aliasBinds = {
     g = "git";
     ff = "fastfetch";
-    ll = "exa -lhgb --icons --git";
-    lla = "exa -lhgab --icons --git";
-    ls = "exa --icons";
-    lsa = "exa -a --icons";
-    lt = "exa --tree --icons";
-    lta = "exa -a --tree --icons";
+    ll = "exa -lhgb --icons --git --group-directories-first";
+    lla = "exa -lhgab --icons --git --group-directories-first";
+    ls = "exa --icons --group-directories-first";
+    lsa = "exa -a --icons --group-directories-first";
+    lt = "exa --tree --icons --group-directories-first";
+    lta = "exa -a --tree --icons --group-directories-first";
     open = "xdg-open";
   };
 in

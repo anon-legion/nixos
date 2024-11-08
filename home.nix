@@ -43,9 +43,7 @@
     sessionVariables = {
       DOTNET_ROOT = "/nix/store/xbnpbibdqy8rivl28g613nh9vlpq0jrg-dotnet-sdk-8.0.401";
       EDITOR = "nvim";
-    };
-    pointerCursor = {
-      size = 24;
+      #XCURSOR_SIZE = "24";
     };
   };
 
@@ -59,11 +57,21 @@
   # CLI
   programs = {
     atuin = {
-      enable = true;
-      enableFishIntegration = true;
+      enable = false;
+      enableFishIntegration = false;
+      flags = [ "--disable-up-arrow" ];
       settings = {
+        common_prefix = [
+          ".."
+          "cd"
+          "ff"
+          "g"
+          "ll"
+          "lla"
+          "sudo"
+          "z"
+        ];
         enter_accept = false;
-        filter_mode_shell_up_key_binding = "directory";
         inline_height = 30;
         invert = true;
         store_failed = false;
