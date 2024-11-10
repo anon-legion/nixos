@@ -162,6 +162,7 @@ in
       lazygit
       libsecret
       lollypop
+      lua
       menulibre
       onlyoffice-desktopeditors
       openssh
