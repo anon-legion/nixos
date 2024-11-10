@@ -19,7 +19,6 @@
     jetbrains.rider
     keepassxc
     kdePackages.kleopatra
-    lua
     nodejs
     nodePackages_latest.pnpm
     obsidian
@@ -108,16 +107,9 @@
     vimdiffAlias = true;
     withNodeJs = true;
     withPython3 = true;
-    plugins = with pkgs.vimPlugins; [
-      conform-nvim
-      LazyVim
-      neotest-dotnet
-      none-ls-nvim
-      nvim-dap
-      nvim-dap-ui
-      nvim-dap-virtual-text
-      omnisharp-extended-lsp-nvim
-    ];
+    #plugins = with pkgs.vimPlugins; [
+    #  LazyVim
+    #];
 
     extraPackages = with pkgs; [
       bash-language-server

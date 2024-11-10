@@ -1,22 +1,22 @@
 local highlight = {
-  "RainbowRed",
-  "RainbowYellow",
-  "RainbowBlue",
-  "RainbowOrange",
-  "RainbowGreen",
-  "RainbowViolet",
-  "RainbowCyan",
+  "DraculaRed",
+  "DraculaYellow",
+  "DraculaPink",
+  "DraculaOrange",
+  "DraculaGreen",
+  "DraculaViolet",
+  "DraculaCyan",
 }
 
 local hooks = require("ibl.hooks")
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-  vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
-  vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
-  vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
-  vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
-  vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
-  vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
-  vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+  vim.api.nvim_set_hl(0, "DraculaRed", { fg = "#FF5555" })
+  vim.api.nvim_set_hl(0, "DraculaYellow", { fg = "#F1FA8C" })
+  vim.api.nvim_set_hl(0, "DraculaPink", { fg = "#FF79C6" })
+  vim.api.nvim_set_hl(0, "DraculaOrange", { fg = "#FFB86C" })
+  vim.api.nvim_set_hl(0, "DraculaGreen", { fg = "#50FA7B" })
+  vim.api.nvim_set_hl(0, "DraculaViolet", { fg = "#BD93F9" })
+  vim.api.nvim_set_hl(0, "DraculaCyan", { fg = "#8BE9FD" })
 end)
 
 return {
