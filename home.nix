@@ -19,6 +19,7 @@
     jetbrains.rider
     keepassxc
     kdePackages.kleopatra
+    lua
     nodejs
     nodePackages_latest.pnpm
     obsidian

@@ -162,10 +162,10 @@ in
       lazygit
       libsecret
       lollypop
-      lua
       menulibre
       onlyoffice-desktopeditors
       openssh
+      p7zip
       pinentry-all # provides a console to enter a passphrase when gpg is run and needs it
       sweet-folders
       ripgrep
