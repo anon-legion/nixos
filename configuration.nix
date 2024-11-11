@@ -186,6 +186,7 @@ in
     ] ++ (with pkgs.gnomeExtensions; [
       blur-my-shell
       bluetooth-quick-connect
+      dash-to-dock
       ddterm
       gsconnect
       logo-menu
