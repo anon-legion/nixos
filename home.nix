@@ -44,7 +44,7 @@
       "$HOME/.dotnet/tools"
     ];
     sessionVariables = {
-      DOTNET_ROOT = "/nix/store/xbnpbibdqy8rivl28g613nh9vlpq0jrg-dotnet-sdk-8.0.401";
+      DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
       EDITOR = "nvim";
       #XCURSOR_SIZE = "24";
     };
