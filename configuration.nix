@@ -194,6 +194,7 @@ in
       privacy-settings-menu
       quick-settings-tweaker
       space-bar
+      tiling-shell
       vitals
     ]);
     gnome.excludePackages = with pkgs; [
