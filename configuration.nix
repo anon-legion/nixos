@@ -138,7 +138,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment = {
-    shells = with pkgs; [ bash fish nushell];
+    shells = with pkgs; [ bash fish ];
     systemPackages = with pkgs; [
       bat
       beauty-line-icon-theme
@@ -167,11 +167,12 @@ in
       openssh
       p7zip
       pinentry-all # provides a console to enter a passphrase when gpg is run and needs it
+      pop-launcher
       sweet-folders
       ripgrep
       tlp
-      tlrc
-      tmux # tldr in rust
+      tlrc # tldr in rust
+      tmux
       unzip
       wget
       wl-clipboard
@@ -191,10 +192,11 @@ in
       gsconnect
       logo-menu
       places-status-indicator
+      pop-shell
       privacy-settings-menu
       quick-settings-tweaker
       space-bar
-      tiling-shell
+      #tiling-shell
       vitals
     ]);
     gnome.excludePackages = with pkgs; [
@@ -276,4 +278,3 @@ in
     #};
   };
 }
-
