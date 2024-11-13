@@ -13,12 +13,15 @@
     bruno
     dbeaver-bin
     devbox
+    discord
+    docker
     dotnet-sdk_8
     ferdium
     hoppscotch
     jetbrains.rider
     keepassxc
     kdePackages.kleopatra
+    lua
     nodejs
     nodePackages_latest.pnpm
     obsidian
