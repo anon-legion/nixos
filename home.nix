@@ -18,6 +18,7 @@
     dotnet-sdk_8
     ferdium
     hoppscotch
+    iw
     jetbrains.rider
     keepassxc
     kdePackages.kleopatra
@@ -27,7 +28,6 @@
     obsidian
     qbittorrent
     spotify
-    station
     telegram-desktop
     tor-browser
     vscode
@@ -94,6 +94,7 @@
     tmux = {
       enable = true;
       clock24 = true;
+      keyMode = "vi";
       plugins = with pkgs.tmuxPlugins; [
         sensible
         yank
