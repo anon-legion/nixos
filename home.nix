@@ -18,7 +18,6 @@
     dotnet-sdk_8
     ferdium
     hoppscotch
-    iw
     jetbrains.rider
     keepassxc
     kdePackages.kleopatra
@@ -80,7 +79,14 @@
         store_failed = false;
       };
     };
-    #eza.enable = true;
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "dracula";
+        theme_background = false;
+        vim_keys = true;
+      };
+    };
     fish = {
       enable = true;
       interactiveShellInit = ''
@@ -101,16 +107,12 @@
         {
           plugin = dracula;
           extraConfig = ''
-            set -g @dracula-show-battery false
-            set -g @dracula-battery-label "🔋"
+            set -g @dracula-plugins "network-ping weather"
             set -g @dracula-show-empty-plugins false
             set -g @dracula-show-fahrenheit false
             set -g @dracula-show-left-icon session
             set -g @dracula-show-powerline true
             set -g @dracula-refresh-rate 10
-            set -g @dracula-network-bandwidth wlp2s0
-            set -g @dracula-network-bandwidth-interval 0
-            set -g @dracula-network-bandwidth-show-interface true
             set -g @dracula-ping-server "google.com"
             set -g @dracula-ping-rate 5
           '';
