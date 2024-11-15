@@ -157,7 +157,6 @@ in
       #fishPlugins.z
       fzf
       gcc
-      htop
       inkscape-with-extensions
       lazygit
       libsecret

@@ -107,6 +107,11 @@
             set -g @dracula-show-left-icon session
             set -g @dracula-show-powerline true
             set -g @dracula-refresh-rate 10
+            set -g @dracula-network-bandwidth wlp2s0
+            set -g @dracula-network-bandwidth-interval 0
+            set -g @dracula-network-bandwidth-show-interface true
+            set -g @dracula-ping-server "google.com"
+            set -g @dracula-ping-rate 5
           '';
         }
       ];
