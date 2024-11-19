@@ -146,7 +146,6 @@ in
       candy-icons
       dracula-theme
       gnome-tweaks
-      gss
       gthumb
       eza
       fastfetch
@@ -154,7 +153,6 @@ in
       fishPlugins.bass
       fishPlugins.fzf-fish
       fishPlugins.tide
-      #fishPlugins.z
       fzf
       gcc
       inkscape-with-extensions
@@ -258,6 +256,11 @@ in
         "fprintd:TestPamFprintd"
       ];
     };
+  };
+
+  services.cntlm = {
+    enable = true;
+    proxy = [ "10.130.18.160:7051" ];
   };
 
   # Enable CUPS to print documents.

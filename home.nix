@@ -101,13 +101,14 @@
       enable = true;
       clock24 = true;
       keyMode = "vi";
+      prefix = "C-space";
       plugins = with pkgs.tmuxPlugins; [
         sensible
         yank
         {
           plugin = dracula;
           extraConfig = ''
-            set -g @dracula-plugins "network-ping weather"
+            set -g @dracula-plugins "network-ping"
             set -g @dracula-show-empty-plugins false
             set -g @dracula-show-fahrenheit false
             set -g @dracula-show-left-icon session
@@ -118,8 +119,10 @@
           '';
         }
       ];
-
       extraConfig = ''
+        bind-key -T copy-mode-vi v send-keys -X begin-selection
+        bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+        bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
         set -g mouse on
       '';
     };
