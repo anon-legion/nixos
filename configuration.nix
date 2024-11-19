@@ -258,10 +258,10 @@ in
     };
   };
 
-  services.cntlm = {
-    enable = true;
-    proxy = [ "10.130.18.160:7051" ];
-  };
+    #services.cntlm = {
+    #  enable = true;
+    #  proxy = [ "10.130.18.160:7051" ];
+    #};
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
