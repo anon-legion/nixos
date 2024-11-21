@@ -162,6 +162,7 @@ in
       menulibre
       onlyoffice-desktopeditors
       openssh
+      openssl
       p7zip
       pinentry-all # provides a console to enter a passphrase when gpg is run and needs it
       pop-launcher
@@ -193,7 +194,6 @@ in
       privacy-settings-menu
       quick-settings-tweaker
       space-bar
-      #tiling-shell
       vitals
     ]);
     gnome.excludePackages = with pkgs; [
@@ -257,11 +257,6 @@ in
       ];
     };
   };
-
-    #services.cntlm = {
-    #  enable = true;
-    #  proxy = [ "10.130.18.160:7051" ];
-    #};
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

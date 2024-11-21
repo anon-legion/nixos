@@ -18,9 +18,11 @@
     dotnet-sdk_8
     ferdium
     hoppscotch
+    httpie
     jetbrains.rider
     keepassxc
     kdePackages.kleopatra
+    lazydocker
     lua
     nodejs
     nodePackages_latest.pnpm
@@ -144,19 +146,14 @@
     vimdiffAlias = true;
     withNodeJs = true;
     withPython3 = true;
-    #plugins = with pkgs.vimPlugins; [
-    #  LazyVim
-    #];
 
     extraPackages = with pkgs; [
       bash-language-server
       lua-language-server
       markdownlint-cli
-      netcoredbg
       nixd
       nodePackages.eslint
       nodePackages.prettier
-      #omnisharp-roslyn
       stylua
       typescript-language-server
       vscode-langservers-extracted
