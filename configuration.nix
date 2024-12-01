@@ -177,13 +177,6 @@ in
       wget
       wl-clipboard
       zoxide
-      (nerdfonts.override { fonts = [ 
-          "FiraCode"
-          "JetBrainsMono"
-          "IosevkaTerm"
-          "IosevkaTermSlab"
-        ]; 
-      })
     ] ++ (with pkgs.gnomeExtensions; [
       blur-my-shell
       bluetooth-quick-connect
@@ -219,13 +212,10 @@ in
     fontDir.enable = true;
     enableDefaultPackages = true;
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ 
-          "FiraCode"
-          "JetBrainsMono"
-          "IosevkaTerm"
-          "IosevkaTermSlab"
-        ]; 
-      })
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.iosevka-term
+      nerd-fonts.iosevka-term-slab
     ];
     fontconfig = {
       enable = true;
