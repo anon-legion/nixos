@@ -119,10 +119,7 @@ in
   };
 
   # Firefox
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox-devedition-unwrapped;
-  };
+  programs.firefox.enable = true;
 
   # GSConnect
   programs.kdeconnect = {
@@ -189,7 +186,6 @@ in
       privacy-settings-menu
       quick-settings-tweaker
       space-bar
-      unite
       vitals
     ]);
     gnome.excludePackages = with pkgs; [
