@@ -119,7 +119,10 @@ in
   };
 
   # Firefox
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox-devedition-unwrapped;
+  };
 
   # GSConnect
   programs.kdeconnect = {
@@ -164,7 +167,6 @@ in
       openssh
       openssl
       p7zip
-      pinentry-all # provides a console to enter a passphrase when gpg is run and needs it
       pop-launcher
       sweet-folders
       ripgrep
@@ -194,6 +196,7 @@ in
       privacy-settings-menu
       quick-settings-tweaker
       space-bar
+      unite
       vitals
     ]);
     gnome.excludePackages = with pkgs; [
