@@ -21,12 +21,13 @@
     httpie
     jetbrains.rider
     keepassxc
-    kdePackages.kleopatra
+    kleopatra
     lazydocker
     lua
     nodejs
     nodePackages_latest.pnpm
     obsidian
+    pinentry-gnome3
     qbittorrent
     spotify
     telegram-desktop
@@ -127,10 +128,6 @@
         set -g mouse on
       '';
     };
-    #yazi = { # terminal file manager
-    #  enable = true;
-    #  enableNushellIntegration = true;
-    #};
     zoxide = {
       enable = true;
       enableFishIntegration = true;
@@ -152,13 +149,22 @@
       lua-language-server
       markdownlint-cli
       nixd
-      nodePackages.eslint
-      nodePackages.prettier
+      #nodePackages.eslint
+      #nodePackages.prettier
       stylua
-      typescript-language-server
-      vscode-langservers-extracted
+      #typescript-language-server
+      #vscode-langservers-extracted
       yaml-language-server
     ];
+  };
+
+  programs.gpg = {
+    enable = true;
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-all;
   };
 
   xdg.configFile = {
