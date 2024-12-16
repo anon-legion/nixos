@@ -139,6 +139,9 @@ in
 
   environment = {
     shells = with pkgs; [ bash fish ];
+    sessionVariables = {
+      FLAKE = "/home/thecomeback/.dotfiles";
+    };
     systemPackages = with pkgs; [
       bat
       beauty-line-icon-theme
