@@ -60,27 +60,6 @@
 
   # CLI
   programs = {
-    atuin = {
-      enable = false;
-      enableFishIntegration = false;
-      flags = [ "--disable-up-arrow" ];
-      settings = {
-        common_prefix = [
-          ".."
-          "cd"
-          "ff"
-          "g"
-          "ll"
-          "lla"
-          "sudo"
-          "z"
-        ];
-        enter_accept = false;
-        inline_height = 30;
-        invert = true;
-        store_failed = false;
-      };
-    };
     btop = {
       enable = true;
       settings = {
