@@ -14,7 +14,6 @@
     dbeaver-bin
     devbox
     devenv
-    direnv
     discord
     docker
     dotnet-sdk_8
@@ -71,6 +70,10 @@
         vim_keys = true;
       };
     };
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      };
     fish = {
       enable = true;
       interactiveShellInit = ''
