@@ -13,10 +13,13 @@
     bruno
     dbeaver-bin
     devbox
+    devenv
+    direnv
     discord
     docker
     dotnet-sdk_8
     ferdium
+    google-chrome
     hoppscotch
     httpie
     jetbrains.rider
