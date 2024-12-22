@@ -13,7 +13,7 @@
     bruno
     dbeaver-bin
     devbox
-    devenv
+    #devenv
     discord
     docker
     dotnet-sdk_8
@@ -72,12 +72,19 @@
     };
     direnv = {
       enable = true;
-      enableFishIntegration = true;
-      };
+      nix-direnv.enable = true;
+      #enableFishIntegration = true;
+    };
     fish = {
       enable = true;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
+
+        function rdr --wraps=rider
+          command rider $argv > /dev/null 2>&1 &
+          disown
+        end
+        funcsave rdr
       '';
     };
     keychain = {
