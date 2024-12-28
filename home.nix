@@ -35,7 +35,6 @@
     telegram-desktop
     tor-browser
     vscode
-    warp-terminal
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
