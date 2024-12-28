@@ -10,7 +10,7 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    bruno
+    #bruno
     dbeaver-bin
     devbox
     #devenv
@@ -35,6 +35,7 @@
     telegram-desktop
     tor-browser
     vscode
+    warp-terminal
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -84,7 +85,6 @@
           command rider $argv > /dev/null 2>&1 &
           disown
         end
-        funcsave rdr
       '';
     };
     keychain = {
