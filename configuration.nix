@@ -144,7 +144,6 @@ in
     };
     systemPackages = with pkgs; [
       bat
-      beauty-line-icon-theme
       btop
       candy-icons
       dracula-theme
@@ -200,7 +199,7 @@ in
       gnome-music
       gnome-tour
       gnome-weather
-      #seahorse # password manager
+      seahorse # password manager
       xterm
       yelp
     ];

@@ -10,10 +10,8 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    #bruno
     dbeaver-bin
     devbox
-    #devenv
     discord
     docker
     dotnet-sdk_8
@@ -50,6 +48,7 @@
     sessionVariables = {
       DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
       EDITOR = "nvim";
+      #XCURSOR_SIZE = 24;
     };
   };
 
