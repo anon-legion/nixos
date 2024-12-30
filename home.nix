@@ -27,6 +27,7 @@
     nodejs
     nodePackages_latest.pnpm
     obsidian
+    picard
     pinentry-gnome3
     qbittorrent
     spotify

@@ -84,6 +84,12 @@ in
     jack.enable = true;
   };
 
+  # Logitech Unifying Receiver used with logitech-udev-rules
+  hardware.logitech.wireless = {
+    enable = true;
+    enableGraphical = false;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.fish;
@@ -160,6 +166,7 @@ in
       inkscape-with-extensions
       lazygit
       libsecret
+      logitech-udev-rules
       lollypop
       menulibre
       onlyoffice-desktopeditors
