@@ -168,6 +168,7 @@ in
       libsecret
       logitech-udev-rules
       lollypop
+      lunarvim
       menulibre
       onlyoffice-desktopeditors
       openssh
@@ -189,11 +190,12 @@ in
       dash-to-dock
       ddterm
       gsconnect
+      just-perfection
       logo-menu
       places-status-indicator
       pop-shell
       privacy-settings-menu
-      quick-settings-tweaker
+      # quick-settings-tweaker
       space-bar
       vitals
     ]);

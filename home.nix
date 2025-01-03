@@ -133,17 +133,18 @@
     vimdiffAlias = true;
     withNodeJs = true;
     withPython3 = true;
-
+  
     extraPackages = with pkgs; [
       bash-language-server
       lua-language-server
       markdownlint-cli
       nixd
-      #nodePackages.eslint
-      #nodePackages.prettier
+      roslyn-ls
+      # nodePackages.eslint
+      # nodePackages.prettier
       stylua
-      #typescript-language-server
-      #vscode-langservers-extracted
+      # typescript-language-server
+      vscode-langservers-extracted
       yaml-language-server
     ];
   };
