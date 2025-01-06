@@ -136,14 +136,16 @@
   
     extraPackages = with pkgs; [
       bash-language-server
+      csharpier
       lua-language-server
       markdownlint-cli
       nixd
-      roslyn-ls
-      # nodePackages.eslint
-      # nodePackages.prettier
+      omnisharp-roslyn
+      # roslyn-ls
+      nodePackages.eslint
+      nodePackages.prettier
       stylua
-      # typescript-language-server
+      typescript-language-server
       vscode-langservers-extracted
       yaml-language-server
     ];

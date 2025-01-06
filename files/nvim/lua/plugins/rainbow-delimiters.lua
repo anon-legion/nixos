@@ -6,9 +6,9 @@ M.colors = {
   cyan = "#8BE9FD",
   purple = "#BD93F9",
   green = "#50FA7B",
-  orange = "#FFB86C",
   red = "#FF5555",
-  yellow = "#F1FA8C",
+  blue = "#7AA2F7",
+  orange = "#FFB86C",
 }
 
 -- highlight groups
@@ -17,9 +17,9 @@ M.highlight_groups = {
   "DraculaCyan",
   "DraculaPurple",
   "DraculaGreen",
-  "DraculaOrange",
   "DraculaRed",
-  "DraculaYellow",
+  "DraculaBlue",
+  "DraculaOrange",
 }
 
 return {
@@ -31,9 +31,9 @@ return {
       DraculaCyan = M.colors.cyan,
       DraculaPurple = M.colors.purple,
       DraculaGreen = M.colors.green,
-      DraculaOrange = M.colors.orange,
       DraculaRed = M.colors.red,
-      DraculaYellow = M.colors.yellow,
+      DraculaBlue = M.colors.blue,
+      DraculaOrange = M.colors.orange,
     }
 
     for name, color in pairs(highlights) do
