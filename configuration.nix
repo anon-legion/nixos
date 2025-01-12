@@ -110,6 +110,8 @@ in
     config = {
       user.email = "g.sync.mobile1@gmail.com";
       user.name = "thecomeback";
+      core.askPass = "";
+      credential.helper = "";
     };
   };
 
@@ -208,7 +210,7 @@ in
       gnome-music
       gnome-tour
       gnome-weather
-      seahorse # password manager
+      # seahorse # password manager
       xterm
       yelp
     ];

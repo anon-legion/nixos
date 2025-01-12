@@ -45,6 +45,7 @@
     sessionPath = [
       "$HOME/.local/share/nvim/mason/bin"
       "$HOME/.dotnet/tools"
+      "${pkgs.omnisharp-roslyn}"
     ];
     sessionVariables = {
       DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
