@@ -12,9 +12,13 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ghostty, home-manager, nix-index-database, ... }:
+  outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -25,17 +29,20 @@
           inherit system;
           modules = [
             {
-              environment.systemPackages =  [ ghostty.packages.${system}.default ];
+              environment.systemPackages =  [ inputs.ghostty.packages.${system}.default ];
             }
+            inputs.nix-index-database.nixosModules.nix-index
             ./configuration.nix
-            nix-index-database.nixosModules.nix-index
           ];
         };
       };
       homeConfigurations = {
         thecomeback = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./home.nix ];
+          modules = [
+            inputs.nixvim.homeManagerModules.nixvim
+            ./home.nix
+          ];
         };
       };
     };

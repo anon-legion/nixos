@@ -31,6 +31,7 @@
     pinentry-gnome3
     qbittorrent
     spotify
+    sqlite
     telegram-desktop
     tor-browser
     vscode
@@ -74,7 +75,6 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-      #enableFishIntegration = true;
     };
     fish = {
       enable = true;
