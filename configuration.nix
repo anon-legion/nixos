@@ -197,7 +197,8 @@ in
       places-status-indicator
       pop-shell
       privacy-settings-menu
-      # quick-settings-tweaker
+      quake-terminal
+      quick-settings-tweaker
       space-bar
       vitals
     ]);

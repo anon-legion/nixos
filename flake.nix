@@ -12,10 +12,10 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
@@ -40,7 +40,7 @@
         thecomeback = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            inputs.nixvim.homeManagerModules.nixvim
+            # inputs.nixvim.homeManagerModules.nixvim
             ./home.nix
           ];
         };

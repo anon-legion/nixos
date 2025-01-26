@@ -114,70 +114,71 @@
         set -g mouse on
       '';
     };
+    yt-dlp.enable = true;
     zoxide = {
       enable = true;
       enableFishIntegration = true;
     };
   };
 
-  programs.nixvim = {
-    enable = true;
-    options = {
-      number = true;
-      relativeNumber = true;
-      shiftWidth = 2;
-    };
-    colorschemes.dracula-nvim.enable = true;
-    plugins = {
-      lualine.enable = true;
-
-      cmp = {
-        enable = true;
-        autoEnableSources = true;
-        settings.sources = [
-          { name = "nvim_lsp"; }
-          { name = "path"; }
-          { name = "buffer"; }
-        ];
-      };
-      lsp = {
-        enable = true;
-        servers = {
-          lua_ls.enable = true;
-          nixd.enable = true;
-          omnisharp.enable = true;
-          ts_ls.enable = true;
-        };
-      };
-    };
-  };
+  # programs.nixvim = {
+  #   enable = true;
+  #   # colorschemes.dracula-nvim.enable = true;
+  #   options = {
+  #     number = true;
+  #     relativeNumber = true;
+  #     shiftWidth = 2;
+  #   };
+  #   plugins = {
+  #     lualine.enable = true;
+  #
+  #     cmp = {
+  #       enable = true;
+  #       autoEnableSources = true;
+  #       settings.sources = [
+  #         { name = "nvim_lsp"; }
+  #         { name = "path"; }
+  #         { name = "buffer"; }
+  #       ];
+  #     };
+  #     lsp = {
+  #       enable = true;
+  #       servers = {
+  #         lua_ls.enable = true;
+  #         nixd.enable = true;
+  #         omnisharp.enable = true;
+  #         ts_ls.enable = true;
+  #       };
+  #     };
+  #   };
+  # };
 
   # Neovim
-  # programs.neovim = {
-  #   enable = true;
-  #   package = pkgs.neovim-unwrapped;
-  #   viAlias = true;
-  #   vimAlias = true;
-  #   vimdiffAlias = true;
-  #   withNodeJs = true;
-  #   withPython3 = true;
-  #
-  #   extraPackages = with pkgs; [
-  #     bash-language-server
-  #     csharpier
-  #     lua-language-server
-  #     markdownlint-cli
-  #     nixd
-  #     omnisharp-roslyn
-  #     # roslyn-ls
-  #     nodePackages.eslint
-  #     nodePackages.prettier
-  #     stylua
-  #     typescript-language-server
-  #     vscode-langservers-extracted
-  #     yaml-language-server
-  #   ];
-  # };
+  programs.neovim = {
+    enable = true;
+    package = pkgs.neovim-unwrapped;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    withNodeJs = true;
+    withPython3 = true;
+
+    extraPackages = with pkgs; [
+      bash-language-server
+      csharpier
+      lua-language-server
+      markdownlint-cli
+      nixd
+      omnisharp-roslyn
+      # roslyn-ls
+      nodePackages.eslint
+      nodePackages.prettier
+      stylua
+      typescript-language-server
+      vscode-langservers-extracted
+      yaml-language-server
+    ];
+  };
 
   programs.gpg = {
     enable = true;
