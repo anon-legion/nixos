@@ -18,7 +18,6 @@
     ferdium
     google-chrome
     hoppscotch
-    httpie
     jetbrains.rider
     keepassxc
     kleopatra
@@ -29,6 +28,7 @@
     obsidian
     picard
     pinentry-gnome3
+    openfortivpn
     qbittorrent
     spotify
     sqlite
@@ -120,38 +120,6 @@
       enableFishIntegration = true;
     };
   };
-
-  # programs.nixvim = {
-  #   enable = true;
-  #   # colorschemes.dracula-nvim.enable = true;
-  #   options = {
-  #     number = true;
-  #     relativeNumber = true;
-  #     shiftWidth = 2;
-  #   };
-  #   plugins = {
-  #     lualine.enable = true;
-  #
-  #     cmp = {
-  #       enable = true;
-  #       autoEnableSources = true;
-  #       settings.sources = [
-  #         { name = "nvim_lsp"; }
-  #         { name = "path"; }
-  #         { name = "buffer"; }
-  #       ];
-  #     };
-  #     lsp = {
-  #       enable = true;
-  #       servers = {
-  #         lua_ls.enable = true;
-  #         nixd.enable = true;
-  #         omnisharp.enable = true;
-  #         ts_ls.enable = true;
-  #       };
-  #     };
-  #   };
-  # };
 
   # Neovim
   programs.neovim = {
