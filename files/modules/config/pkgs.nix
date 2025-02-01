@@ -11,8 +11,10 @@
       eza
       fastfetch
       fd
+      fishPlugins.autopair
       fishPlugins.bass
       fishPlugins.fzf-fish
+      fishPlugins.sponge
       fishPlugins.tide
       fzf
       gcc
