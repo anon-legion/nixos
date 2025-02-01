@@ -1,42 +1,15 @@
 { config, lib, pkgs, ... }:
-let
-  aliasBinds = {
-    g = "git";
-    ff = "fastfetch";
-    ll = "exa -lhgb --icons --git --group-directories-first";
-    lla = "exa -lhgab --icons --git --group-directories-first";
-    ls = "exa --icons --group-directories-first";
-    lsa = "exa -a --icons --group-directories-first";
-    lt = "exa --tree --icons --group-directories-first";
-    lta = "exa -a --tree --icons --group-directories-first";
-    open = "xdg-open";
-  };
-in
 {
   imports = [
     ./hardware-configuration.nix 
+    ./files/modules/config/boot.nix
+    ./files/modules/config/fonts.nix
+    ./files/modules/config/gnome.nix
+    ./files/modules/config/laptop-power.nix
+    ./files/modules/config/peripherals.nix
     ./files/modules/config/pkgs.nix
+    ./files/modules/config/shells.nix
   ];
-
-  boot = {
-    consoleLogLevel = 0;
-    kernelPackages = pkgs.linuxPackages_latest; # Keep linux kernel on latest version
-    kernelParams = ["quiet" "splash"];
-    #resumeDevice = "/dev/disk/by-partlabel/swap"; # Fix hibernate issue
-    initrd.verbose = false;
-    plymouth.enable = true; # animated boot splash screen
-    loader = {
-      timeout = 3;
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    }; 
-  };
-
-  networking = {
-    hostName = "nixos-goober";
-    firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
-    networkmanager.enable = true;
-  };
 
   time.timeZone = "Asia/Singapore";
 
@@ -56,45 +29,10 @@ in
     };
   };
 
-  # Windowing system config
-  services.xserver = {
-    enable = true;
-    xkb.layout = "us";
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    excludePackages = (with pkgs; [
-      xterm
-    ]);
-  };
-
   hardware.enableAllFirmware = true;
-
-  # Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
-  # Enable sound.
-  security.rtkit.enable = true;
-  services.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  # Logitech Unifying Receiver used with logitech-udev-rules
-  hardware.logitech.wireless = {
-    enable = true;
-    enableGraphical = false;
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
-    defaultUserShell = pkgs.fish;
     users.thecomeback = {
       isNormalUser = true;
       description = "gio";
@@ -106,73 +44,10 @@ in
     };
   };
 
-  # Git
-  programs.git = {
-    enable = true;
-    config = {
-      user.email = "g.sync.mobile1@gmail.com";
-      user.name = "thecomeback";
-      core.askPass = "";
-      credential.helper = "";
-    };
-  };
-
-  # Shells
-  programs = {
-    bash = {
-      shellAliases = aliasBinds;
-    };
-    fish = {
-      enable = true;
-      shellAliases = aliasBinds;
-    };
-  };
-
-  # Firefox
-  programs.firefox.enable = true;
-
-  # GSConnect
-  programs.kdeconnect = {
-    enable = true;
-    package = pkgs.gnomeExtensions.gsconnect;
-  };
-
-  # nh nix helper
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 7d --keep 5";
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  environment = {
-    shells = with pkgs; [ bash fish ];
-    sessionVariables = {
-      FLAKE = "/home/thecomeback/.dotfiles";
-    };
-  };
-
-  documentation.nixos.enable = false;
-
-  fonts = {
-    fontDir.enable = true;
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      nerd-fonts.fira-code
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.iosevka-term
-      nerd-fonts.iosevka-term-slab
-    ];
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        serif = [ "IosevkaTermSlab Nerd Font Propo" ];
-        sansSerif = [ "FiraCode Nerd Font" ];
-        monospace = [ "JetBrainsMono Nerd Font Mono" ];
-      };
-    };
+  networking = {
+    hostName = "nixos-goober";
+    firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
+    networkmanager.enable = true;
   };
 
   # Enable the OpenSSH daemon.
@@ -184,23 +59,14 @@ in
     };
   };
 
-  # Enable TLP power management daemon
-  services.power-profiles-daemon.enable = false; # disable built-in Gnome power management daemon
-  services.tlp.enable = true;
+  documentation.nixos.enable = false;
 
-  # Fingerprint sensor
-  services.fprintd = {
-    enable = true;
-    package = pkgs.fprintd.overrideAttrs {
-      mesonCheckFlags = [
-        "--no-suite"
-        "fprintd:TestPamFprintd"
-      ];
-    };
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  environment.sessionVariables = {
+    FLAKE = "/home/thecomeback/.dotfiles";
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   system.stateVersion = "24.05";
 
@@ -209,10 +75,5 @@ in
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
     };
-    #gc = {
-    #  automatic = true;
-    #  dates = "weekly";
-    #  options = "--delete-older-than 30d";
-    #};
   };
 }
