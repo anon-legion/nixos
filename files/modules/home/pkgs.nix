@@ -1,0 +1,30 @@
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    dbeaver-bin
+    devbox
+    discord
+    docker
+    dotnet-sdk_8
+    ferdium
+    google-chrome
+    hoppscotch
+    jetbrains.rider
+    keepassxc
+    kleopatra
+    lazydocker
+    lua
+    nodejs
+    nodePackages_latest.pnpm
+    obsidian
+    picard
+    pinentry-gnome3
+    openfortivpn
+    qbittorrent
+    spotify
+    sqlite
+    telegram-desktop
+    tor-browser
+    vscode
+  ];
+}
