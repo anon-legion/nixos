@@ -2,7 +2,6 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      bat
       btop
       gthumb
       gcc
@@ -16,7 +15,6 @@
       openssh
       openssl
       p7zip
-      rofi-wayland
       ripgrep
       tlrc # tldr in rust
       tmux

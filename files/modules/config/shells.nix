@@ -16,6 +16,7 @@ in
   environment = {
     shells = with pkgs; [ bash fish ];
     systemPackages = with pkgs; [
+      bat
       eza
       fastfetch
       fd

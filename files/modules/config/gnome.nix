@@ -16,6 +16,7 @@
       candy-icons
       dracula-theme
       gnome-tweaks
+      onagre
       pop-launcher
       sweet-folders
     ] ++ (with pkgs.gnomeExtensions; [
@@ -27,7 +28,6 @@
       just-perfection
       logo-menu
       places-status-indicator
-      pop-shell
       privacy-settings-menu
       quake-terminal
       quick-settings-tweaker
