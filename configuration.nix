@@ -9,6 +9,7 @@
     ./files/modules/config/peripherals.nix
     ./files/modules/config/pkgs.nix
     ./files/modules/config/shells.nix
+    ./files/modules/config/sway.nix
   ];
 
   time.timeZone = "Asia/Singapore";

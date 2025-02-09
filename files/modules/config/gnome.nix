@@ -13,12 +13,11 @@
 
   environment = {
     systemPackages = with pkgs; [
-      candy-icons
+      # candy-icons
       dracula-theme
       gnome-tweaks
-      onagre
       pop-launcher
-      sweet-folders
+      # sweet-folders
     ] ++ (with pkgs.gnomeExtensions; [
       blur-my-shell
       bluetooth-quick-connect
@@ -28,11 +27,11 @@
       just-perfection
       logo-menu
       places-status-indicator
+      pop-shell
       privacy-settings-menu
       quake-terminal
       quick-settings-tweaker
       space-bar
-      tiling-shell
       vitals
     ]);
 

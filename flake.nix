@@ -3,10 +3,10 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
-    };
+    # ghostty = {
+    #   url = "github:ghostty-org/ghostty";
+    #   inputs.nixpkgs-unstable.follows = "nixpkgs";
+    # };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,9 +31,9 @@
         nixos-goober = lib.nixosSystem {
           inherit system;
           modules = [
-            {
-              environment.systemPackages =  [ inputs.ghostty.packages.${system}.default ];
-            }
+            # {
+            #   environment.systemPackages =  [ inputs.ghostty.packages.${system}.default ];
+            # }
             inputs.nix-index-database.nixosModules.nix-index
             ./configuration.nix
           ];
