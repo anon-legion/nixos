@@ -44,7 +44,6 @@
       gnome-music
       gnome-tour
       gnome-weather
-      # seahorse # password manager
       xterm
       yelp
     ];

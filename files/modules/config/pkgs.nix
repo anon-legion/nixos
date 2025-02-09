@@ -1,30 +1,28 @@
 { pkgs, ... }:
 {
-  environment = {
-    systemPackages = with pkgs; [
-      btop
-      gthumb
-      gcc
-      inkscape-with-extensions
-      lazygit
-      libsecret
-      lollypop
-      lunarvim
-      menulibre
-      onlyoffice-desktopeditors
-      openssh
-      openssl
-      p7zip
-      ripgrep
-      tlrc # tldr in rust
-      tmux
-      unzip
-      wget
-      wl-clipboard
-      xh
-      zoxide
-    ];
-  };
+  environment.systemPackages = with pkgs; [
+    btop
+    gthumb
+    gcc
+    inkscape-with-extensions
+    lazygit
+    libsecret
+    lollypop
+    lunarvim
+    menulibre
+    onlyoffice-desktopeditors
+    openssh
+    openssl
+    p7zip
+    ripgrep
+    tlrc # tldr in rust
+    tmux
+    unzip
+    wget
+    wl-clipboard
+    xh
+    zoxide
+  ];
 
   programs = {
     firefox.enable = true;
