@@ -5,6 +5,7 @@
     ./files/modules/config/boot.nix
     ./files/modules/config/fonts.nix
     ./files/modules/config/gnome.nix
+    ./files/modules/config/hyprland.nix
     ./files/modules/config/laptop-power.nix
     ./files/modules/config/peripherals.nix
     ./files/modules/config/pkgs.nix
@@ -30,6 +31,16 @@
   };
 
   hardware.enableAllFirmware = true;
+
+  # Use GDM as greeter
+  services.xserver = {
+    enable = true;
+    xkb.layout = "us";
+    displayManager.gdm.enable = true;
+    excludePackages = (with pkgs; [
+      xterm
+    ]);
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
@@ -58,9 +69,6 @@
       PasswordAuthentication = true;
     };
   };
-
-  # Enable for swaywm
-  security.polkit.enable = true;
 
   documentation.nixos.enable = false;
 

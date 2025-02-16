@@ -1,15 +1,7 @@
 { pkgs, ... }:
 {
-  # Windowing system config
-  services.xserver = {
-    enable = true;
-    xkb.layout = "us";
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    excludePackages = (with pkgs; [
-      xterm
-    ]);
-  };
+  # Enable Gnome DE
+  services.xserver.desktopManager.gnome.enable = true;
 
   environment = {
     systemPackages = with pkgs; [

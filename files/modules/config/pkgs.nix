@@ -2,13 +2,13 @@
 {
   environment.systemPackages = with pkgs; [
     btop
+    font-awesome
     gthumb
     gcc
     inkscape-with-extensions
     lazygit
     libsecret
     lollypop
-    lunarvim
     menulibre
     onlyoffice-desktopeditors
     openssh
