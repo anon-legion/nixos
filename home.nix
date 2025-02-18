@@ -1,12 +1,12 @@
 { pkgs, ... }:
 {
   imports = [
+    ./files/modules/home/hypr
     ./files/modules/home/cli.nix
     ./files/modules/home/ghostty.nix
     ./files/modules/home/gpg.nix
     ./files/modules/home/neovim.nix
     ./files/modules/home/pkgs.nix
-    ./files/modules/home/sway.nix
   ];
 
   home = {

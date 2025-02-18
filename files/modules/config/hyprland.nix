@@ -2,14 +2,17 @@
 {
   environment = {
     systemPackages = with pkgs; [
+      brightnessctl
       file-roller # archive manager
       gnome-calculator
+      gnome-text-editor
       hypridle
       hyprlock
       hyprpaper
       hyprpicker
       hyprshot
       loupe # image viewer
+      networkmanagerapplet
       rofi-wayland
       totem # video player
       seahorse # keyring manager front-end
@@ -19,6 +22,7 @@
 
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
+      HYPRSHOT_DIR = "$HOME/Pictures/Screenshots/";
     };
   };
 
