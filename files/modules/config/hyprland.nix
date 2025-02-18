@@ -2,7 +2,6 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      kitty
       file-roller # archive manager
       gnome-calculator
       hypridle
