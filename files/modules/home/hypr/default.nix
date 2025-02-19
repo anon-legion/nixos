@@ -14,6 +14,14 @@
     size = 24;
   };
 
+  xdg.configFile = {
+    "swappy/config".text = ''
+      [Default]
+      save_dir=$HOME/Pictures/Screenshots/
+      save_filename_format=%Y-%m-%d-%H%M%S_hyprshot.png
+    '';
+  };
+
   # Source hyprland config from the home-manager store
   xdg.configFile = {
     "hypr/hyprland.conf" = {

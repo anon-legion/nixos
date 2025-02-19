@@ -17,6 +17,7 @@
       totem # video player
       seahorse # keyring manager front-end
       swaynotificationcenter
+      swappy
       waybar
     ];
 
