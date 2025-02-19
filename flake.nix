@@ -36,10 +36,6 @@
       homeConfigurations = {
         thecomeback = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = {
-            inherit inputs outputs;
-            nhModules = "${self}/modules/home";
-          };
           modules = [
             # inputs.nixvim.homeManagerModules.nixvim
             ./home.nix
