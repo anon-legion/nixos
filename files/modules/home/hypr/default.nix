@@ -1,7 +1,9 @@
 { config, lib, pkgs, ... }: 
 {
   imports = [
+    ../misc/gtk
     ../misc/wallpaper
+    ../misc/xdg
     ../swaync
     ../waybar
   ];
