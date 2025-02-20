@@ -2,6 +2,7 @@
 {
   imports = [
     ../misc/wallpaper
+    ../swaync
     ../waybar
   ];
 

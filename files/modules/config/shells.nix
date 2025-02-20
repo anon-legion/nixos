@@ -37,6 +37,12 @@ in
       enable = true;
       shellAliases = aliasBinds;
     };
+    bat = {
+      enable = true;
+      settings = {
+        theme = "Dracula";
+      };
+    };
   };
 
   users.defaultUserShell = pkgs.fish;
