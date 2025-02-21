@@ -1,12 +1,13 @@
 { config, lib, pkgs, ... }: 
 {
   imports = [
-    ../cliphist
-    ../misc/gtk
-    ../misc/wallpaper
-    ../misc/xdg
-    ../swaync
-    ../waybar
+    ./cliphist
+    ./kanshi
+    ./misc/gtk
+    ./misc/wallpaper
+    ./misc/xdg
+    ./swaync
+    ./waybar
   ];
 
   # Consistent cursor theme across all applications.
