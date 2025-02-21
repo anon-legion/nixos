@@ -8,8 +8,8 @@
       package = pkgs.tela-circle-icon-theme;
     };
     cursorTheme = {
-      name = "Yaru";
-      package = pkgs.yaru-theme;
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
       size = 24;
     };
     font = {

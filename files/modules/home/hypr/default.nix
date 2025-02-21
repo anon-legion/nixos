@@ -12,8 +12,8 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs.yaru-theme;
-    name = "Yaru";
+    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
     size = 24;
   };
 
@@ -158,12 +158,19 @@
 
     "org/gnome/desktop/interface" = {
       "color-scheme" = "prefer-dark";
-      "cursor-theme" = "Yaru";
+      "cursor-theme" = "Adwaita";
       "icon-theme" = "Tela-circle-dark";
     };
 
     "org/gnome/desktop/wm/preferences" = {
       "button-layout" = lib.mkForce "";
+    };
+
+    "org/gnome/nautilus/preferences" = {
+      "default-folder-viewer" = "grid-view";
+      "migrated-gtk-settings" = true;
+      "search-filter-time-type" = "last_modified";
+      "search-view" = "list-view";
     };
 
     "org/gnome/nm-applet" = {

@@ -17,7 +17,7 @@
       defaultApplications = {
         "application/json" = ["gnome-text-editor.desktop"];
         "application/toml" = "org.gnome.TextEditor.desktop";
-        "application/x-gnome-saved-search" = ["thunar"];
+        "application/x-gnome-saved-search" = ["org.gnome.Nautilus.desktop"];
         "audio/*" = ["org.gnome.Totem.dekstop"];
         "audio/mp3" = ["org.gnome.Totem.dekstop"];
         "image/*" = ["org.gnome.loupe.desktop"];
@@ -26,6 +26,11 @@
         "text/plain" = "org.gnome.TextEditor.desktop";
         "video/*" = ["org.gnome.Totem.dekstop"];
         "video/mp4" = ["org.gnome.Totem.dekstop"];
+        "text/html" = "firefox.desktop";
+        "x-scheme-handler/http" = "firefox.desktop";
+        "x-scheme-handler/https" = "firefox.desktop";
+        "x-scheme-handler/about" = "firefox.desktop";
+        "x-scheme-handler/unknown" = "firefox.desktop";
       };
     };
     userDirs = {

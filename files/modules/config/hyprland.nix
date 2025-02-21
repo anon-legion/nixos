@@ -11,7 +11,10 @@
       hyprpaper
       hyprpicker
       hyprshot
+      libheif # HEIC image preview
+      libheif.out # HEIC image preview
       loupe # image viewer
+      nautilus # file manager
       networkmanagerapplet
       rofi-wayland
       totem # video player
@@ -25,6 +28,9 @@
       NIXOS_OZONE_WL = "1";
       HYPRSHOT_DIR = "$HOME/Pictures/Screenshots/";
     };
+
+    # HEIC image preview
+    pathsToLink = [ "share/thumbnailers" ];
   };
 
   # Enable bluetooth support
@@ -51,7 +57,7 @@
     };
   };
 
-  # Extend Thunar's functionality
+  # Extend file-explorer functionality
   services = {
     gvfs.enable = true; # Mount, trash, and other functionalities
     tumbler.enable = true; # Thumbnail support for images
