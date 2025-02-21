@@ -171,6 +171,7 @@
       "migrated-gtk-settings" = true;
       "search-filter-time-type" = "last_modified";
       "search-view" = "list-view";
+      "show-hidden-files" = false;
     };
 
     "org/gnome/nm-applet" = {
