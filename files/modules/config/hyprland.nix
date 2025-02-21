@@ -47,14 +47,6 @@
       withUWSM = true;
       xwayland.enable = true;
     };
-
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-      ];
-    };
   };
 
   # Extend file-explorer functionality

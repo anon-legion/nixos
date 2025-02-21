@@ -22,6 +22,7 @@
     };
     gtk3 = {
       bookmarks = [
+        "file:///home/thecomeback/Desktop"
         "file:///home/thecomeback/Documents"
         "file:///home/thecomeback/Downloads"
         "file:///home/thecomeback/Music"
