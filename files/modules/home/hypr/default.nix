@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }: 
 {
   imports = [
+    ../cliphist
     ../misc/gtk
     ../misc/wallpaper
     ../misc/xdg

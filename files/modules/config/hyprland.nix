@@ -11,6 +11,7 @@
       hyprpaper
       hyprpicker
       hyprshot
+      kanshi
       libheif # HEIC image preview
       libheif.out # HEIC image preview
       loupe # image viewer
