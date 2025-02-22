@@ -87,21 +87,9 @@
 
         clock = {
           format = "{:%b %d %H:%M}";
-          format-alt = " {:%H:%M   %Y, %d %B, %A}";
-          tooltip-format = "<tt><small>{calendar}</small></tt>";
-          calendar = {
-            mode = "year";
-            mode-mon-col = 3;
-            weeks-pos = "right";
-            on-scroll = 1;
-            format = {
-              months = "<span color='#bd93f9'><b>{}</b></span>";
-              days = "<span color='#f1fa8c'><b>{}</b></span>";
-              weeks = "<span color='#8be9fd'><b>W{}</b></span>";
-              weekdays = "<span color='#ffb86c'><b>{}</b></span>";
-              today = "<span color='#ff79c6'><b><u>{}</u></b></span>";
-            };
-          };
+          on-click = "gnome-calendar";
+          timezone = "";
+          tooltip = false;
         };
 
         cpu = {
