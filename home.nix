@@ -22,13 +22,6 @@
     };
   };
 
-  gtk = {
-    enable = true;
-    font = {
-      name = "FiraCode Nerd Font";
-    };
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   # Nicely reload system units when changing configs

@@ -12,10 +12,13 @@
       enableGraphical = true;
     };
   };
- 
+  
   # Ensures Pipewire processes get real time priority
   security.rtkit.enable = true;
   services = {
+    # Enable devmon for device management
+    devmon.enable = true;
+
     # Use Pipewire instead of Pulseaudio for sound
     pulseaudio.enable = false;
     pipewire = {
@@ -38,6 +41,6 @@
     };
 
     # Enable CUPS to print documents.
-    printing.enable = true;
+    printing.enable = false;
   };
 }

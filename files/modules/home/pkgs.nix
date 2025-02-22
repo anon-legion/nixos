@@ -20,6 +20,8 @@
     picard
     pinentry-gnome3
     openfortivpn
+    pavucontrol
+    pulseaudio
     qbittorrent
     spotify
     sqlite
