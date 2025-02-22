@@ -10,13 +10,20 @@
     ./waybar
   ];
 
-  # Consistent cursor theme across all applications.
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    package = pkgs.adwaita-icon-theme;
-    name = "Adwaita";
-    size = 24;
+  home = {
+    # Consistent cursor theme across all applications.
+    pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+      size = 24;
+    };
+
+    packages = with pkgs; [
+      gnome-calendar
+    ];
+
   };
 
   xdg.configFile = {

@@ -30,11 +30,9 @@
 
         modules-right = [
           "custom/recorder"
-          "hyprland/language"
           "tray"
           "bluetooth"
           "pulseaudio"
-          "pulseaudio#microphone"
           "battery"
         ];
 
@@ -97,11 +95,11 @@
             weeks-pos = "right";
             on-scroll = 1;
             format = {
-              months = "<span color='#ffead3'><b>{}</b></span>";
-              days = "<span color='#ecc6d9'><b>{}</b></span>";
-              weeks = "<span color='#99ffdd'><b>W{}</b></span>";
-              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-              today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+              months = "<span color='#bd93f9'><b>{}</b></span>";
+              days = "<span color='#f1fa8c'><b>{}</b></span>";
+              weeks = "<span color='#8be9fd'><b>W{}</b></span>";
+              weekdays = "<span color='#ffb86c'><b>{}</b></span>";
+              today = "<span color='#ff79c6'><b><u>{}</u></b></span>";
             };
           };
         };
@@ -109,10 +107,6 @@
         cpu = {
           format = "󰍛 {usage}%";
           interval = 1;
-        };
-
-        "hyprland/language" = {
-          format = "{short}";
         };
 
         "hyprland/workspaces" = {
@@ -150,16 +144,6 @@
           on-click-right = "pamixer -t";
           smooth-scrolling-threshold = 1;
           ignored-sinks = ["Easy Effects Sink"];
-        };
-
-        "pulseaudio#microphone" = {
-          format = "{format_source}";
-          format-source = " {volume}%";
-          format-source-muted = "";
-          on-click = "pavucontrol";
-          on-click-right = "pamixer --default-source -t";
-          on-scroll-up = "pamixer --default-source -i 5";
-          on-scroll-down = "pamixer --default-source -d 5";
         };
 
         temperature = {
@@ -262,12 +246,12 @@
       }
 
       #workspaces button.urgent {
-        color: #ed8796;
+        color: #ff79c6;
         border-radius: 8px;
       }
 
       #workspaces button:hover {
-        color: #dfdfdf;
+        color: #f8f8f2;
         border-radius: 3px;
       }
 
@@ -284,13 +268,13 @@
       #pulseaudio,
       #temperature,
       #workspaces {
-        color: #dfdfdf;
+        color: #f8f8f2;
         padding: 0px 10px;
         border-radius: 8px;
       }
 
       #temperature.critical {
-        background-color: #ff0000;
+        background-color: #ff5555;
       }
 
       @keyframes blink {
@@ -300,11 +284,11 @@
       }
 
       #taskbar button.active {
-        background-color: #7f849c;
+        background-color: #282a36;
       }
 
       #battery.critical:not(.charging) {
-        color: #f53c3c;
+        color: #ff5555;
         animation-name: blink;
         animation-duration: 0.5s;
         animation-timing-function: linear;
@@ -313,7 +297,7 @@
       }
 
       #custom-recorder {
-        color: #ff2800;
+        color: #ff5555;
       }
     '';
   };
