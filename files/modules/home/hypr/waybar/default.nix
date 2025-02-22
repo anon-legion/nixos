@@ -16,16 +16,15 @@
         margin-right = 4;
 
         modules-left = [
-          "hyprland/workspaces"
           "cpu"
-          "temperature"
           "memory"
-          "backlight"
+          "temperature"
+          "battery"
         ];
 
         modules-center = [
+          "hyprland/workspaces"
           "clock"
-          "custom/notification"
         ];
 
         modules-right = [
@@ -33,7 +32,8 @@
           "tray"
           "bluetooth"
           "pulseaudio"
-          "battery"
+          "backlight"
+          "custom/notification"
         ];
 
         backlight = {
@@ -59,19 +59,18 @@
             warning = 30;
             critical = 20;
           };
-          format = "<big>{icon}</big>  {capacity}%";
-          format-charging = " {capacity}%";
-          format-plugged = " {capacity}%";
-          format-full = "{icon} Full";
-          format-alt = "{icon} {time}";
+          format = "{icon} {capacity}% 󰔟 {time} 󱐌 {power}w";
+          format-charging = "󰂄 {capacity}% 󰔟 {time} 󱐌 {power}w";
+          format-plugged = "󰚥 {capacity}% 󰔟 {time} y {power}w";
+          format-full = "{icon} {capacity}% 󰔟 {time} 󱐌 {power}w";
           format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
+            "󰁻"
+            "󰁽"
+            "󰁿"
+            "󰂁"
+            "󰁹"
           ];
-          format-time = "{H}h {M}min";
+          format-time = "{H}:{M}";
           tooltip = true;
           tooltip-format = "{timeTo} {power}w";
         };
@@ -120,9 +119,9 @@
           format-muted = "";
           format-icons = {
             default = [
-              ""
-              ""
-              " "
+              "󰕿"
+              "󰖀"
+              "󰕾"
             ];
           };
           on-click = "pavucontrol";
@@ -139,8 +138,15 @@
           tooltip = false;
           hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
           critical-threshold = 82;
-          format-critical = "{icon} {temperatureC}°C";
-          format = "󰈸 {temperatureC}°C";
+          format-critical = "󰈸 {temperatureC}°C";
+          format = "{icon} {temperatureC}°C";
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
 
         tray = {
