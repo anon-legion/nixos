@@ -61,16 +61,23 @@
           };
           format = "{icon} {capacity}% 󰔟 {time} 󱐌 {power}w";
           format-charging = "󰂄 {capacity}% 󰔟 {time} 󱐌 {power}w";
-          format-plugged = "󰚥 {capacity}% 󰔟 {time} 󱐌 {power}w";
+          format-plugged = "󱞜 {capacity}% 󰔟 󰛤  󱐌 {power}w";
           format-full = "{icon} {capacity}% 󰔟 {time} 󱐌 {power}w";
-          format-icons = [
-            "󰁻"
-            "󰁽"
-            "󰁿"
-            "󰂁"
-            "󰁹"
-          ];
-          format-time = "{H}:{M}";
+          format-icons = {
+            default = [
+              "󰁺"
+              "󰁻"
+              "󰁼"
+              "󰁽"
+              "󰁾"
+              "󰁿"
+              "󰂀"
+              "󰂁"
+              "󰂂"
+              "󰁹"
+            ];
+          };
+          format-time = "{H}:{m}";
         };
 
         bluetooth = {

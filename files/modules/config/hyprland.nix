@@ -12,7 +12,9 @@
     systemPackages = with pkgs; [
       brightnessctl
       file-roller # archive manager
+      gnome-bluetooth
       gnome-calculator
+      gnome-control-center
       gnome-remote-desktop
       gnome-text-editor
       hypridle
@@ -58,6 +60,7 @@
       gnome-keyring.enable = true;
       gnome-remote-desktop.enable = true;
     };
+    udev.packages = [ pkgs.gnome-settings-daemon ];
 
     # Extend file-explorer functionality
     gvfs.enable = true; # Mount, trash, and other functionalities
