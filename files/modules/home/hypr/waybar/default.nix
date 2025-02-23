@@ -16,10 +16,10 @@
         margin-right = 4;
 
         modules-left = [
+          "battery"
           "cpu"
           "memory"
           "temperature"
-          "battery"
         ];
 
         modules-center = [
@@ -61,7 +61,7 @@
           };
           format = "{icon} {capacity}% 󰔟 {time} 󱐌 {power}w";
           format-charging = "󰂄 {capacity}% 󰔟 {time} 󱐌 {power}w";
-          format-plugged = "󰚥 {capacity}% 󰔟 {time} y {power}w";
+          format-plugged = "󰚥 {capacity}% 󰔟 {time} 󱐌 {power}w";
           format-full = "{icon} {capacity}% 󰔟 {time} 󱐌 {power}w";
           format-icons = [
             "󰁻"
@@ -71,8 +71,6 @@
             "󰁹"
           ];
           format-time = "{H}:{M}";
-          tooltip = true;
-          tooltip-format = "{timeTo} {power}w";
         };
 
         bluetooth = {

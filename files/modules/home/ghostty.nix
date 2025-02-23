@@ -6,6 +6,8 @@
     installVimSyntax = true;
     settings = {
       theme = "Dracula";
+      "cursor-style" = "block";
+      "shell-integration-features" = "no-cursor"; # forces shell integration to use cursor style defined in settings
       "font-family" = "JetBrainsMono Nerd Font";
       "font-size" = "11";
     };

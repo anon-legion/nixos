@@ -1,10 +1,19 @@
 { pkgs, ... }:
 {
+  programs = {
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
+  };
+
   environment = {
     systemPackages = with pkgs; [
       brightnessctl
       file-roller # archive manager
       gnome-calculator
+      gnome-remote-desktop
       gnome-text-editor
       hypridle
       hyprlock
@@ -35,29 +44,29 @@
   };
 
   # Enable bluetooth support
-  services.blueman.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
 
-
-  programs = {
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-      xwayland.enable = true;
-    };
-  };
-
-  # Extend file-explorer functionality
   services = {
+    # Bluetooth client
+    blueman.enable = true;
+
+    # Enable gnome services used by hyprland
+    gnome = {
+      gnome-keyring.enable = true;
+      gnome-remote-desktop.enable = true;
+    };
+
+    # Extend file-explorer functionality
     gvfs.enable = true; # Mount, trash, and other functionalities
     tumbler.enable = true; # Thumbnail support for images
+
+    # Call dbus-update-activation-environment on login
+    xserver.updateDbusEnvironment = true;
   };
 
-  # Enable security services
-  services.gnome.gnome-keyring.enable = true;
   security = {
     pam.services = {
       hyprlock = {};
@@ -65,9 +74,6 @@
     };
     polkit.enable = true;
   };
-
-  # Call dbus-update-activation-environment on login
-  services.xserver.updateDbusEnvironment = true;
 
   xdg.portal = {
     enable = true;
