@@ -17,6 +17,7 @@
       gnome-control-center
       gnome-remote-desktop
       gnome-text-editor
+      gst_all_1.gstreamer # a/v properties
       hypridle
       hyprlock
       hyprpaper
@@ -34,7 +35,10 @@
       swaynotificationcenter
       swappy
       waybar
-    ];
+    ] ++ (with pkgs.gst_all_1; [
+      gst-plugins-bad
+      gst-plugins-good
+    ]);
 
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
