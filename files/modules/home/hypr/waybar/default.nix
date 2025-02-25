@@ -28,7 +28,7 @@
         ];
 
         modules-right = [
-          "custom/recorder"
+          "privacy"
           "tray"
           "bluetooth"
           "pulseaudio"
@@ -37,7 +37,7 @@
         ];
 
         backlight = {
-          interval = 2;
+          interval = 3;
           align = 0;
           rotate = 0;
           format = "{icon} {percent}%";
@@ -49,7 +49,7 @@
         };
 
         battery = {
-          interval = 60;
+          interval = 3;
           align = 0;
           rotate = 0;
           full-at = 100;
@@ -98,7 +98,7 @@
 
         cpu = {
           format = "󰍛 {usage}%";
-          interval = 1;
+          interval = 3;
         };
 
         "hyprland/workspaces" = {
@@ -110,13 +110,36 @@
         };
 
         memory = {
-          interval = 10;
+          interval = 3;
           format = "󰾆 {used:0.1f}G";
           format-alt = "󰾆 {percentage}%";
           format-alt-click = "click";
           tooltip = true;
           tooltip-format = "{used:0.1f}GB/{total:0.1f}G";
           on-click-right = "foot --title btop sh -c 'btop'";
+        };
+
+        privacy = {
+          icon-spacing = 4;
+          icon-size = 16;
+          transition-duration = 250;
+          modules = [
+            {
+              type = "screenshare";
+              tooltip = true;
+              tooltip-icon-size = 20;
+            }
+            {
+              type = "audio-out";
+              tooltip = true;
+              tooltip-icon-size = 20;
+            }
+            {
+              type = "audio-in";
+              tooltip = true;
+              tooltip-icon-size = 20;
+            }
+          ];
         };
 
         pulseaudio = {
@@ -177,16 +200,6 @@
           on-click = "swaync-client -t -sw";
           on-click-right = "swaync-client -d -sw";
           escape = true;
-        };
-
-        "custom/recorder" = {
-          format = "";
-          tooltip = false;
-          return-type = "json";
-          exec = "echo '{\"class\": \"recording\"}'";
-          exec-if = "pgrep wf-recorder";
-          interval = 1;
-          on-click = "screen-recorder";
         };
       };
     };
