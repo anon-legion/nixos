@@ -1,11 +1,18 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./overlays
+  ];
+
   programs = {
     hyprland = {
       enable = true;
       withUWSM = true;
       xwayland.enable = true;
     };
+
+    # Store Gnome based application settings
+    dconf.enable = true;
   };
 
   environment = {
@@ -14,6 +21,7 @@
       file-roller # archive manager
       gnome-bluetooth
       gnome-calculator
+      gnome-calendar
       gnome-control-center
       gnome-remote-desktop
       gnome-text-editor
@@ -35,10 +43,7 @@
       swaynotificationcenter
       swappy
       waybar
-    ] ++ (with pkgs.gst_all_1; [
-      gst-plugins-bad
-      gst-plugins-good
-    ]);
+    ];
 
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
@@ -84,8 +89,14 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
     ];
+
+    config = {
+      common = {
+        default = ["gtk" "hyprland"];
+      };
+    };
   };
 }

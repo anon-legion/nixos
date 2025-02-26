@@ -19,11 +19,11 @@
       name = "Adwaita";
       size = 24;
     };
+  };
 
-    packages = with pkgs; [
-      gnome-calendar
-    ];
-
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
   };
 
   xdg.configFile = {

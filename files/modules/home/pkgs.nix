@@ -11,7 +11,6 @@
     hoppscotch
     jetbrains.rider
     keepassxc
-    kleopatra
     lazydocker
     lua
     nodejs
@@ -28,5 +27,7 @@
     telegram-desktop
     tor-browser
     vscode
-  ];
+  ] ++ (with pkgs.kdePackages; [
+    kleopatra
+  ]);
 }

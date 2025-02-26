@@ -19,6 +19,8 @@
         "application/pdf" = ["onlyoffice-desktopeditors.desktop"];
         "application/toml" = ["org.gnome.TextEditor.desktop"];
         "application/x-gnome-saved-search" = ["org.gnome.Nautilus.desktop"];
+        "application/octet-stream" = ["org.gnome.Nautilus.desktop"];
+        "inode/directory" = ["org.gnome.Nautilus.desktop"];
         "audio/*" = ["org.gnome.Totem.dekstop"];
         "audio/mp3" = ["org.gnome.Totem.dekstop"];
         "image/*" = ["org.gnome.loupe.desktop"];

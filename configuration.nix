@@ -2,10 +2,10 @@
 {
   imports = [
     ./hardware-configuration.nix 
+    ./files/modules/config/hypr
     ./files/modules/config/boot.nix
     ./files/modules/config/fonts.nix
     ./files/modules/config/gnome.nix
-    ./files/modules/config/hyprland.nix
     ./files/modules/config/laptop-power.nix
     ./files/modules/config/peripherals.nix
     ./files/modules/config/pkgs.nix
