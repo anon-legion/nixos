@@ -57,7 +57,10 @@
 
   networking = {
     hostName = "nixos-goober";
-    firewall.allowedTCPPorts = [ 22 ]; # default port for ssh is 22
+    firewall = {
+      allowedTCPPorts = [ 22 ]; # default port for ssh is 22
+      checkReversePath = "loose";
+    };
     networkmanager.enable = true;
   };
 
@@ -73,6 +76,7 @@
 
     tailscale = {
       enable = true;
+      useRoutingFeatures = "client";
     };
   };
 

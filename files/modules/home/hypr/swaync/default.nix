@@ -1,7 +1,7 @@
 { ... }: 
 {
   xdg.configFile = {
-    "swaync" = {
+    "swaync/style.css" = {
       source = ./style.css;
     };
   };
