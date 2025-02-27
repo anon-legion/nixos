@@ -121,7 +121,7 @@
         };
 
         privacy = {
-          icon-spacing = 5;
+          icon-spacing = 18;
           icon-size = 16;
           transition-duration = 250;
           modules = [
@@ -179,7 +179,7 @@
         };
 
         tray = {
-          spacing = 20;
+          spacing = 18;
         };
 
         "custom/notification" = {

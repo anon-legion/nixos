@@ -62,11 +62,17 @@
   };
 
   # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = true;
+  services = {
+    openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = true;
+      };
+    };
+
+    tailscale = {
+      enable = true;
     };
   };
 
