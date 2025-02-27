@@ -25,7 +25,6 @@
       gnome-control-center
       gnome-remote-desktop
       gnome-text-editor
-      gst_all_1.gstreamer # a/v properties
       hypridle
       hyprlock
       hyprpaper

@@ -42,10 +42,11 @@
           rotate = 0;
           format = "{icon} {percent}%";
           format-icons = ["󰃞" "󰃟" "󰃝" "󰃠"];
-          icon-size = 10;
+          icon-size = 9;
           on-scroll-up = "brightnessctl set +5%";
           on-scroll-down = "brightnessctl set 5%-";
           smooth-scrolling-threshold = 1;
+          tooltip = false;
         };
 
         battery = {
@@ -120,24 +121,24 @@
         };
 
         privacy = {
-          icon-spacing = 4;
+          icon-spacing = 5;
           icon-size = 16;
           transition-duration = 250;
           modules = [
             {
               type = "screenshare";
               tooltip = true;
-              tooltip-icon-size = 20;
+              tooltip-icon-size = 18;
             }
             {
               type = "audio-out";
               tooltip = true;
-              tooltip-icon-size = 20;
+              tooltip-icon-size = 18;
             }
             {
               type = "audio-in";
               tooltip = true;
-              tooltip-icon-size = 20;
+              tooltip-icon-size = 18;
             }
           ];
         };
