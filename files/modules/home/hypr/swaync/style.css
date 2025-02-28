@@ -174,7 +174,8 @@ slider {
     inset 0 0 0 1px @background-darker;
   border-radius: 8px;
   margin: 18px;
-  background-color: @background;
+  background-color: rgba(40, 42, 54, 0.9);
+  /* background-color: @background; */
   color: @comment;
   padding: 14px;
 }
