@@ -66,15 +66,10 @@
           format-full = "{icon} {capacity}% 󰔟 {time} 󱐌 {power}w";
           format-icons = {
             default = [
-              "󰁺"
               "󰁻"
-              "󰁼"
               "󰁽"
-              "󰁾"
               "󰁿"
-              "󰂀"
               "󰂁"
-              "󰂂"
               "󰁹"
             ];
           };
