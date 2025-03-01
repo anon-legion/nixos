@@ -22,6 +22,7 @@
       gnome-bluetooth
       gnome-calculator
       gnome-calendar
+      gnome-online-accounts-gtk
       gnome-remote-desktop
       gnome-text-editor
       hypridle
@@ -71,6 +72,7 @@
     # Enable gnome services used by hyprland
     gnome = {
       gnome-keyring.enable = true;
+      gnome-online-accounts.enable = true;
       gnome-remote-desktop.enable = true;
     };
     udev.packages = [ pkgs.gnome-settings-daemon ];
