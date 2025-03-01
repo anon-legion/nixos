@@ -36,6 +36,7 @@
       loupe # image viewer
       nautilus # file manager
       networkmanagerapplet
+      overskride
       rofi-wayland
       totem # video player
       seahorse # keyring manager front-end
@@ -66,9 +67,6 @@
   };
 
   services = {
-    # Bluetooth client
-    blueman.enable = true;
-
     # Enable gnome services used by hyprland
     gnome = {
       gnome-keyring.enable = true;

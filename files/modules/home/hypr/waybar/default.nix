@@ -82,7 +82,7 @@
           tooltip-format = " {device_alias}";
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = "Name: {device_alias}\nBattery: {device_battery_percentage}%";
-          on-click = "blueman-manager";
+          on-click = "overskride";
         };
 
         clock = {
