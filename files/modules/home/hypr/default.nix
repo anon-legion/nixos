@@ -8,6 +8,7 @@
     ./misc/xdg
     ./swaync
     ./waybar
+    ./wlogout
   ];
 
   home = {

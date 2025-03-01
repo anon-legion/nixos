@@ -34,6 +34,7 @@
           "pulseaudio"
           "backlight"
           "custom/notification"
+          "custom/powerctrl"
         ];
 
         backlight = {
@@ -196,6 +197,13 @@
           on-click = "swaync-client -t -sw";
           on-click-right = "swaync-client -d -sw";
           escape = true;
+        };
+
+        "custom/powerctrl" = {
+          tooltip = false;
+          format = " <b>{icon}</b>";
+          format-icons = " ";
+          on-click = "wlogout";
         };
       };
     };
