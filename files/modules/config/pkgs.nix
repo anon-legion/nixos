@@ -14,6 +14,7 @@
     openssh
     openssl
     p7zip
+    playerctl
     ripgrep
     tlrc # tldr in rust
     tmux

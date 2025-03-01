@@ -22,7 +22,6 @@
       gnome-bluetooth
       gnome-calculator
       gnome-calendar
-      gnome-control-center
       gnome-remote-desktop
       gnome-text-editor
       hypridle

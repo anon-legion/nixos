@@ -7,6 +7,7 @@
     ./files/modules/config/fonts.nix
     ./files/modules/config/gnome.nix
     ./files/modules/config/laptop-power.nix
+    ./files/modules/config/network.nix
     ./files/modules/config/peripherals.nix
     ./files/modules/config/pkgs.nix
     ./files/modules/config/shells.nix
@@ -52,31 +53,6 @@
         "wheel"
         #"video"
       ];
-    };
-  };
-
-  networking = {
-    hostName = "nixos-goober";
-    firewall = {
-      allowedTCPPorts = [ 22 ]; # default port for ssh is 22
-      checkReversePath = "loose";
-    };
-    networkmanager.enable = true;
-  };
-
-  # Enable the OpenSSH daemon.
-  services = {
-    openssh = {
-      enable = true;
-      settings = {
-        PermitRootLogin = "no";
-        PasswordAuthentication = true;
-      };
-    };
-
-    tailscale = {
-      enable = true;
-      useRoutingFeatures = "client";
     };
   };
 
