@@ -19,7 +19,6 @@
     systemPackages = with pkgs; [
       brightnessctl
       file-roller # archive manager
-      gnome-bluetooth
       gnome-calculator
       gnome-calendar
       gnome-online-accounts-gtk
