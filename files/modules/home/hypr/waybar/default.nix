@@ -20,11 +20,13 @@
           "cpu"
           "memory"
           "temperature"
+          "network"
         ];
 
         modules-center = [
           "hyprland/workspaces"
           "clock"
+          "disk"
         ];
 
         modules-right = [
@@ -106,14 +108,26 @@
           sort-by-number = true;
         };
 
+        disk = {
+          unit = "TiB";
+          format = " 󱘲 {percentage_used}%";
+          tooltip-format = "Used: {used}\nFree: {free}\nTotal: {total}";
+        };
+
         memory = {
           interval = 3;
           format = "󰾆 {used:0.1f}G";
           format-alt = "󰾆 {percentage}%";
           format-alt-click = "click";
           tooltip = true;
-          tooltip-format = "{used:0.1f}GB/{total:0.1f}G";
+          tooltip-format = "{used:0.1f}GiB/{total:0.1f}GiB";
           on-click-right = "foot --title btop sh -c 'btop'";
+        };
+
+        network = {
+          interval = 3;
+          format = " 󰶣 {bandwidthUpBytes} 󰶡 {bandwidthDownBytes}";
+          tooltip-format = "Interface: {ifname}\nIP: {ipaddr}\nGateway: {gwaddr}";
         };
 
         privacy = {
@@ -201,7 +215,7 @@
 
         "custom/powerctrl" = {
           tooltip = false;
-          format = " <b>{icon}</b>";
+          format = " <b>{icon}</b> ";
           format-icons = " ";
           on-click = "wlogout";
         };
