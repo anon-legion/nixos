@@ -98,6 +98,7 @@
         cpu = {
           format = "󰍛 {usage}%";
           interval = 3;
+          on-click-right = "gnome-system-monitor";
         };
 
         "hyprland/workspaces" = {
@@ -121,7 +122,7 @@
           format-alt-click = "click";
           tooltip = true;
           tooltip-format = "{used:0.1f}GiB/{total:0.1f}GiB";
-          on-click-right = "foot --title btop sh -c 'btop'";
+          on-click-right = "gnome-system-monitor";
         };
 
         network = {

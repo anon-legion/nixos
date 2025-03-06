@@ -23,6 +23,7 @@
       gnome-calendar
       gnome-online-accounts-gtk
       gnome-remote-desktop
+      gnome-system-monitor
       gnome-text-editor
       hypridle
       hyprlock
