@@ -117,8 +117,8 @@
 
         memory = {
           interval = 3;
-          format = "󰾆 {used:0.1f}G";
-          format-alt = "󰾆 {percentage}%";
+          format = "󰾆 {percentage}%";
+          format-alt = "󰾆 {used:0.1f}G";
           format-alt-click = "click";
           tooltip = true;
           tooltip-format = "{used:0.1f}GiB/{total:0.1f}GiB";

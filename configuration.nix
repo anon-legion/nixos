@@ -37,10 +37,20 @@
   services.xserver = {
     enable = true;
     xkb.layout = "us";
-    displayManager.gdm.enable = true;
+    # displayManager.gdm.enable = true;
     excludePackages = (with pkgs; [
       xterm
     ]);
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        user = "greeter";
+      };
+    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
