@@ -18,9 +18,12 @@
   environment = {
     systemPackages = with pkgs; [
       brightnessctl
+      evolution-data-server
       file-roller # archive manager
       gnome-calculator
       gnome-calendar
+      gnome-contacts
+      gnome-online-accounts
       gnome-online-accounts-gtk
       gnome-remote-desktop
       gnome-system-monitor
@@ -116,6 +119,7 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
     ];
 
     config = {
