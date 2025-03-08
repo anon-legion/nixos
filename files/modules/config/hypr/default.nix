@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./greetd
     ./overlays
   ];
 
@@ -78,16 +79,6 @@
     };
     udev.packages = [ pkgs.gnome-settings-daemon ];
 
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd Hyprland";
-          user = "greeter";
-        };
-      };
-    };
-
     # Extend file-explorer functionality
     gvfs.enable = true; # Mount, trash, and other functionalities
     tumbler.enable = true; # Thumbnail support for images
@@ -102,17 +93,6 @@
       gdm.enableGnomeKeyring = true;
     };
     polkit.enable = true;
-  };
-
-  systemd.services.greetd.serviceConfig = {
-    Type = "idle";
-    StandardInput = "tty";
-    StandardOutput = "tty";
-    StandardError = "journal"; # Without this errors will spam on screen
-    # Without these bootlogs will spam on screen
-    TTYReset = true;
-    TTYVHangup = true;
-    TTYVTDisallocate = true;
   };
 
   xdg.portal = {
