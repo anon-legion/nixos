@@ -1,7 +1,13 @@
 { pkgs, ... }:
 {
-  # Enable Gnome DE
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver = {
+    enable = true;
+    desktopManager.gnome.enable = true;
+    xkb.layout = "us";
+    excludePackages = (with pkgs; [
+      xterm
+    ]);
+  };
 
   environment = {
     systemPackages = with pkgs; [
