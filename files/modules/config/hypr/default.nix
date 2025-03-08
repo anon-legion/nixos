@@ -90,7 +90,7 @@
   security = {
     pam.services = {
       hyprlock = {};
-      gdm.enableGnomeKeyring = true;
+      greetd.enableGnomeKeyring = true;
     };
     polkit.enable = true;
   };
