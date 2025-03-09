@@ -33,6 +33,7 @@
       hyprlock
       hyprpaper
       hyprpicker
+      hyprpolkitagent
       hyprshot
       kanshi
       libheif # HEIC image preview

@@ -3,8 +3,9 @@
   environment.systemPackages = with pkgs; [
     btop
     font-awesome
-    gthumb
     gcc
+    gparted
+    gthumb
     inkscape-with-extensions
     lazygit
     libsecret
