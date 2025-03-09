@@ -6,6 +6,7 @@
     ./misc/gtk
     ./misc/wallpaper
     ./misc/xdg
+    ./rofi
     ./swaync
     ./waybar
     ./wlogout
