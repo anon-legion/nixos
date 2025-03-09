@@ -7,11 +7,4 @@
       (rofi-calc.override { rofi-unwrapped = rofi-wayland-unwrapped; })
     ];
   };
-
-
-  xdg.configFile = {
-    "rofi/config.rasi" = {
-      source = ./config.rasi;
-    };
-  };
 }
