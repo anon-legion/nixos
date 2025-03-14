@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    bruno
     dbeaver-bin
     devbox
     discord
@@ -8,7 +9,6 @@
     dotnet-sdk_8
     ferdium
     google-chrome
-    hoppscotch
     jetbrains.rider
     keepassxc
     lazydocker

@@ -77,6 +77,7 @@
             ];
           };
           format-time = "{H}:{m}";
+          tooltip-format = "Health: {health}\nCycles: {cycles}";
         };
 
         bluetooth = {

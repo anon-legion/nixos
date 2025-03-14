@@ -1,8 +1,9 @@
-{ config, lib, pkgs, ... }: 
+{ config, lib, pkgs, ... }:
 {
   imports = [
     ./cliphist
     ./kanshi
+    ./kdeconnect
     ./misc/gtk
     ./misc/wallpaper
     ./misc/xdg
@@ -21,11 +22,6 @@
       name = "Adwaita";
       size = 24;
     };
-  };
-
-  services.kdeconnect = {
-    enable = true;
-    indicator = true;
   };
 
   xdg.configFile = {
