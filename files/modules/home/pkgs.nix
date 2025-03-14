@@ -26,7 +26,7 @@
     sqlite
     telegram-desktop
     tor-browser
-    vscode
+    valent
   ] ++ (with pkgs.kdePackages; [
     kleopatra
   ]);
