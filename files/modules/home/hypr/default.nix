@@ -23,11 +23,6 @@
     };
   };
 
-  services.kdeconnect = {
-    enable = true;
-    indicator = true;
-  };
-
   xdg.configFile = {
     "swappy/config".text = ''
       [Default]

@@ -2,13 +2,9 @@
 {
   networking = {
     hostName = "nixos-goober";
-    firewall = rec {
+    firewall = {
       allowedTCPPorts = [ 22 ]; # default port for ssh is 22
-      checkReversePath = "loose"; # fix not internet when tailscale up
-
-      # Ports used by kdeconnect
-      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
-      allowedUDPPortRanges = allowedTCPPortRanges;
+      checkReversePath = "loose"; # fix no internet when tailscale up
     };
     networkmanager.enable = true;
   };
