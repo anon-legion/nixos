@@ -3,6 +3,7 @@
   imports = [
     ./cliphist
     ./kanshi
+    ./kdeconnect
     ./misc/gtk
     ./misc/wallpaper
     ./misc/xdg
