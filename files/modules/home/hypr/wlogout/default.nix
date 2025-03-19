@@ -13,7 +13,7 @@
           label = "logout";
           action = "loginctl terminate-user $USER";
           text = "Logout";
-          keybind = "e";
+          keybind = "o";
       }
       {
           label = "reboot";
