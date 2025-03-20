@@ -7,6 +7,7 @@
     ./misc/gtk
     ./misc/wallpaper
     ./misc/xdg
+    ./qt5ct
     ./rofi
     ./swaync
     ./waybar

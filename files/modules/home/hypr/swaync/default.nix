@@ -1,4 +1,4 @@
-{ ... }: 
+{ ... }:
 {
   xdg.configFile = {
     "swaync/style.css" = {
