@@ -4,6 +4,7 @@
     ./greetd
     ./kdeconnect
     ./overlays
+    ./qt5ct
   ];
 
   programs = {

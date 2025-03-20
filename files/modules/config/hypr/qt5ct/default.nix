@@ -7,8 +7,10 @@
   nixpkgs.config.qt5 = {
     enable = true;
     platformTheme = "qt5ct"; 
-    # style = {
-    #   name = "Utterly Nord Plasma";
-    # };
+    style = {
+      name = "Dracula";
+    };
   };
+
+  environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 }
