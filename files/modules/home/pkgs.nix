@@ -18,6 +18,7 @@
     obsidian
     picard
     pinentry-gnome3
+    postman
     openfortivpn
     pavucontrol
     pulseaudio
