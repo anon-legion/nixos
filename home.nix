@@ -6,6 +6,7 @@
     ./files/modules/home/ghostty.nix
     ./files/modules/home/gpg.nix
     ./files/modules/home/neovim.nix
+    ./files/modules/home/nixvim.nix
     ./files/modules/home/pkgs.nix
     ./files/modules/home/zed.nix
   ];
@@ -16,7 +17,6 @@
     stateVersion = "24.05";
     sessionPath = [
       "$HOME/.dotnet/tools"
-      "${pkgs.omnisharp-roslyn}"
     ];
     sessionVariables = {
       DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";

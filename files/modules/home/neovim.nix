@@ -16,8 +16,6 @@
       markdownlint-cli
       nixd
       omnisharp-roslyn
-      # roslyn-ls
-      # nodePackages.eslint
       nodePackages.prettier
       stylua
       typescript-language-server
