@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:anon-legion/nixvim";
+      url = "github:anon-legion/nixvim/thecomeback";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

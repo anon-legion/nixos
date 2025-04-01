@@ -11,11 +11,9 @@
 
     extraPackages = with pkgs; [
       bash-language-server
-      csharpier
       lua-language-server
       markdownlint-cli
       nixd
-      omnisharp-roslyn
       nodePackages.prettier
       stylua
       typescript-language-server
