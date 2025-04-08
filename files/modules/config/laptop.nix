@@ -1,6 +1,13 @@
 { ... }:
 {
   services = {
+    logind = {
+      # Laptop lid behavior
+      lidSwitch = "suspend";
+      lidSwitchExternalPower = "suspend";
+      lidSwitchDocked = "ignore";
+    };
+
     # Disable built-in Gnome power management daemon
     power-profiles-daemon.enable = false;
     # Enable TLP power management daemon
