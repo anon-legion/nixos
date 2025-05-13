@@ -15,6 +15,10 @@
       url = "github:anon-legion/nixvim/thecomeback";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixcats = {
+      url = "github:anon-legion/nixcats/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:

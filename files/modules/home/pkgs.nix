@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     bruno
+    cloc
     dbeaver-bin
     devbox
     discord

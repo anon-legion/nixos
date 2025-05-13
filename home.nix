@@ -6,6 +6,7 @@
     ./files/modules/home/ghostty.nix
     ./files/modules/home/gpg.nix
     ./files/modules/home/neovim.nix
+    # ./files/modules/home/nixcats.nix
     ./files/modules/home/pkgs.nix
     ./files/modules/home/zed.nix
   ];

@@ -22,8 +22,12 @@
         DISK_IDLE_SECS_ON_BAT="2";
         MAX_LOST_WORK_SECS_ON_AC="15";
         MAX_LOST_WORK_SECS_ON_BAT="60";
-        CPU_ENERGY_PERF_POLICY_ON_AC="balance_performance";
-        CPU_ENERGY_PERF_POLICY_ON_BAT="balance_power";
+        CPU_ENERGY_PERF_POLICY_ON_AC="performance";
+        CPU_ENERGY_PERF_POLICY_ON_BAT="power";
+        PLATFORM_PROFILE_ON_AC="performance";
+        PLATFORM_PROFILE_ON_BAT="low-power";
+        CPU_BOOST_ON_AC="1";
+        CPU_BOOST_ON_BAT="0";
         NMI_WATCHDOG="0";
         DISK_DEVICES="nvme0n1 sda";
         DISK_APM_LEVEL_ON_AC="254 254";
@@ -39,10 +43,8 @@
         PCIE_ASPM_ON_BAT="default";
         RADEON_DPM_PERF_LEVEL_ON_AC="auto";
         RADEON_DPM_PERF_LEVEL_ON_BAT="auto";
-        RADEON_POWER_PROFILE_ON_AC="default";
-        RADEON_POWER_PROFILE_ON_BAT="default";
         AMDGPU_ABM_LEVEL_ON_AC="0";
-        AMDGPU_ABM_LEVEL_ON_BAT="1";
+        AMDGPU_ABM_LEVEL_ON_BAT="3";
         WIFI_PWR_ON_AC="off";
         WIFI_PWR_ON_BAT="on";
         WOL_DISABLE="Y";
@@ -67,6 +69,7 @@
         TPSMAPI_ENABLE="1";
         START_CHARGE_THRESH_BAT0="75";
         STOP_CHARGE_THRESH_BAT0="80";
+        # DEVICES_TO_ENABLE_ON_STARTUP="bluetooth wifi wwan";
       };
     };
   };
