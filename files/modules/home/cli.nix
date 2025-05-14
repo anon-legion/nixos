@@ -10,10 +10,10 @@
       };
     };
 
-    carapace = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+    # carapace = {
+    #   enable = true;
+    #   enableFishIntegration = true;
+    # };
 
     direnv = {
       enable = true;
