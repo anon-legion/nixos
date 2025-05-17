@@ -6,7 +6,6 @@
     dbeaver-bin
     devbox
     discord
-    docker
     dotnet-sdk_8
     ferdium
     google-chrome

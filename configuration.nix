@@ -4,6 +4,7 @@
     ./hardware-configuration.nix 
     ./files/modules/config/hypr
     ./files/modules/config/boot.nix
+    ./files/modules/config/docker.nix
     ./files/modules/config/fonts.nix
     ./files/modules/config/laptop.nix
     ./files/modules/config/network.nix
