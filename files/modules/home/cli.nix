@@ -68,4 +68,15 @@
       enableFishIntegration = true;
     };
   };
+
+  home.packages = with pkgs; [
+    cloc
+    curlie
+    devbox
+    lazydocker
+    lua
+    nodejs
+    nodePackages_latest.pnpm
+    openfortivpn
+  ];
 }
