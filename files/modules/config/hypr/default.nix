@@ -60,12 +60,6 @@
     pathsToLink = [ "share/thumbnailers" ];
   };
 
-  # Enable bluetooth support
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
   services = {
     # Enable gnome services used by hyprland
     gnome = {

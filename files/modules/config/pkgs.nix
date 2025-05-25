@@ -1,12 +1,10 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    btop
     font-awesome
     gcc
     gthumb
     inkscape-with-extensions
-    lazygit
     libsecret
     lollypop
     menulibre
@@ -15,14 +13,7 @@
     openssl
     p7zip
     playerctl
-    ripgrep
-    tlrc # tldr in rust
-    tmux
     unzip
-    wget
-    wl-clipboard
-    xh
-    zoxide
   ];
 
   programs = {

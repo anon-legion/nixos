@@ -17,6 +17,7 @@ in
     shells = with pkgs; [ bash fish ];
     systemPackages = with pkgs; [
       bat
+      btop
       eza
       fastfetch
       fd
@@ -26,6 +27,8 @@ in
       fishPlugins.sponge
       fishPlugins.tide
       fzf
+      lazygit
+      wl-clipboard
     ];
   };
 

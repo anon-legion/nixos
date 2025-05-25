@@ -32,6 +32,11 @@
       enableFishIntegration = true;
     };
 
+    ripgrep = {
+      enable = true;
+      arguments = ["--smart-case"];
+    };
+
     tmux = {
       enable = true;
       clock24 = true;
@@ -63,6 +68,14 @@
 
     yt-dlp.enable = true;
 
+    zellij = {
+      enable = true;
+      zellij.themes.dracula = ../../zellij/themes/dracula.kdl;
+      settings = {
+        theme = "dracula";
+      };
+      enableFishIntegration = true;
+    };
     zoxide = {
       enable = true;
       enableFishIntegration = true;
@@ -71,12 +84,14 @@
 
   home.packages = with pkgs; [
     cloc
-    curlie
     devbox
     lazydocker
     lua
     nodejs
     nodePackages_latest.pnpm
     openfortivpn
+    tlrc
+    tokei
+    xh
   ];
 }
