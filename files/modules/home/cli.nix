@@ -68,14 +68,6 @@
 
     yt-dlp.enable = true;
 
-    zellij = {
-      enable = true;
-      zellij.themes.dracula = ../../zellij/themes/dracula.kdl;
-      settings = {
-        theme = "dracula";
-      };
-      enableFishIntegration = true;
-    };
     zoxide = {
       enable = true;
       enableFishIntegration = true;

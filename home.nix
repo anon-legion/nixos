@@ -9,6 +9,7 @@
     # ./files/modules/home/nixcats.nix
     ./files/modules/home/pkgs.nix
     ./files/modules/home/zed.nix
+    ./files/modules/home/zellij.nix
   ];
 
   home = {
