@@ -31,6 +31,4 @@
       };
     };
   };
-
-  home.file.".config/zellij/themes/dracula.kdl".source = ../../zellij/dracula.kdl;
 }

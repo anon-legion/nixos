@@ -4,6 +4,7 @@ return {
     opts = {
       servers = {
         bashls = {},
+        jdtls = {},
         jsonls = {},
         lua_ls = {
           settings = {
@@ -31,6 +32,11 @@ return {
             },
           },
         },
+      },
+      setup = {
+        jdtls = function()
+          return true -- avoid duplicate java lsp servers
+        end,
       },
     },
   },

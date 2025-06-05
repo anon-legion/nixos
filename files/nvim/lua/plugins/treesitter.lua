@@ -21,6 +21,7 @@ return {
         "css",
         "dockerfile",
         "html",
+        "java",
         "javascript",
         "json",
         "jsonc",
