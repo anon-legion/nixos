@@ -6,6 +6,7 @@
     settings = {
       theme = "dracula";
       pane_frames = false;
+      show_startup_tips = false;
       # default_layout = "compact";
       keybinds = {
         unbind = [

@@ -85,5 +85,6 @@
     tlrc
     tokei
     xh
+    wget
   ];
 }

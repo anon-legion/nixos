@@ -4,15 +4,14 @@
     bruno
     dbeaver-bin
     discord
-    dotnet-sdk_8
     ferdium
     google-chrome
-    jetbrains.rider
     keepassxc
     obsidian
     picard
     pinentry-gnome3
     postman
+    openfortivpn
     pavucontrol
     pulseaudio
     qbittorrent
@@ -20,6 +19,7 @@
     sqlite
     telegram-desktop
     tor-browser
+    zoom-us
   ] ++ (with pkgs.kdePackages; [
     kleopatra
   ]);
