@@ -79,8 +79,6 @@
     devbox
     lazydocker
     lua
-    nodejs
-    nodePackages_latest.pnpm
     openfortivpn
     tlrc
     tokei

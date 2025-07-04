@@ -1,9 +1,9 @@
 { ... }:
 {
   imports = [
+    ./files/modules/home/dev
     ./files/modules/home/hypr
     ./files/modules/home/cli.nix
-    ./files/modules/home/dotnet.nix
     ./files/modules/home/ghostty.nix
     ./files/modules/home/gpg.nix
     ./files/modules/home/neovim.nix
