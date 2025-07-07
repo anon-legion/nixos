@@ -1,7 +1,14 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    nodejs
-    nodePackages_latest.pnpm
-  ];
+  home = {
+    sessionPath = [
+      "$HOME/.npm-global"
+      "$HOME/.local/bin/pnpm"
+    ];
+    packages = with pkgs; [
+      nodejs
+      pnpm
+      jetbrains.webstorm
+    ];
+  };
 }

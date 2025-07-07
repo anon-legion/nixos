@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     bruno
-    dbeaver-bin
     discord
     ferdium
     google-chrome
@@ -16,7 +15,6 @@
     pulseaudio
     qbittorrent
     spotify
-    sqlite
     telegram-desktop
     tor-browser
     zoom-us
