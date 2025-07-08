@@ -4,13 +4,13 @@
     ./hardware-configuration.nix 
     ./files/modules/config/hypr
     ./files/modules/config/boot.nix
-    ./files/modules/config/docker.nix
     ./files/modules/config/fonts.nix
     ./files/modules/config/laptop.nix
     ./files/modules/config/network.nix
     ./files/modules/config/peripherals.nix
     ./files/modules/config/pkgs.nix
     ./files/modules/config/shells.nix
+    ./files/modules/config/virtualization.nix
   ];
 
   time.timeZone = "Asia/Singapore";
@@ -30,8 +30,6 @@
       LC_TIME = "en_US.UTF-8";
     };
   };
-
-  hardware.enableAllFirmware = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
