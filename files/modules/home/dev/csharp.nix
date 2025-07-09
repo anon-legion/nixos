@@ -3,6 +3,7 @@
   home = {
     sessionPath = [
       "$HOME/.dotnet/tools"
+      "$HOME/.splashkit"
     ];
     sessionVariables = {
       DOTNET_ROOT = "${pkgs.dotnetCorePackages.sdk_8_0}/share/dotnet";
