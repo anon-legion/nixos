@@ -37,9 +37,10 @@
       isNormalUser = true;
       description = "gio";
       extraGroups = [
+        "incus-admin"
         "kvm"
         "libvirtd"
-        "lxd"
+        # "lxd"
         "networkmanager"
         "wheel"
         #"video"

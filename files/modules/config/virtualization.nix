@@ -9,18 +9,16 @@
     win-spice
   ];
 
-  programs.virt-manager = {
-    enable = true;
-    extraConfig = ''
-      [virt-viewer]
-      default-zoom = 1.0
-      default-scale = 1.0
-    '';
-  };
+  programs.virt-manager.enable = true;
 
   hardware.ksm.enable = true;
 
   users.groups.libvirtd.members = [ "thecomeback"];
+
+  networking = {
+    nftables.enable = true;
+    firewall.trustedInterfaces = [ "incusbr0" ];
+  };
 
   virtualisation = {
     docker.rootless = {
@@ -28,14 +26,13 @@
       setSocketVariable = true;
     };
 
+    incus = {
+      enable = true;
+    };
+
     libvirtd = {
       enable = true;
       qemu = {
-        # withVhostUser = true;
-        # withVhostSCSI = true;
-        # withVhostUserFS = true;
-        # withVhostUserNet = true;
-        # withVhostUserGPU = true;
         swtpm.enable = true;
         ovmf.enable = true;
         ovmf.packages = [ pkgs.OVMFFull.fd ];
@@ -47,11 +44,10 @@
       lxcfs.enable = true;
     };
 
-    lxd = {
-      enable = true;
-      recommendedSysctlSettings = true;
-      ui.enable = true;
-    };
+    # lxd = {
+    #   enable = true;
+    #   recommendedSysctlSettings = true;
+    # };
 
     spiceUSBRedirection.enable = true;
   };

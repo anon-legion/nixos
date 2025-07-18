@@ -80,6 +80,7 @@
     lazydocker
     lua
     openfortivpn
+    tdf
     tlrc
     tokei
     xh
