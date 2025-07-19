@@ -27,7 +27,6 @@
       gnome-contacts
       gnome-online-accounts
       gnome-online-accounts-gtk
-      gnome-remote-desktop
       gnome-system-monitor
       gnome-text-editor
       hypridle
@@ -44,6 +43,7 @@
       networkmanagerapplet
       overskride
       rofi-wayland
+      rustdesk
       totem # video player
       seahorse # keyring manager front-end
       swaynotificationcenter
