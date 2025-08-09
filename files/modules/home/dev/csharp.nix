@@ -6,7 +6,7 @@
       "$HOME/.splashkit"
     ];
     sessionVariables = {
-      DOTNET_ROOT = "${pkgs.dotnetCorePackages.sdk_8_0}/share/dotnet";
+      DOTNET_ROOT = "${pkgs.dotnetCorePackages.sdk_9_0}/share/dotnet";
     };
     packages = with pkgs; [
       (
