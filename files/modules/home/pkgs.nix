@@ -6,6 +6,7 @@
     ferdium
     google-chrome
     keepassxc
+    krita
     obsidian
     picard
     pinentry-gnome3
@@ -21,4 +22,9 @@
   ] ++ (with pkgs.kdePackages; [
     kleopatra
   ]);
+
+
+  programs = {
+    obs-studio.enable = true;
+  };
 }

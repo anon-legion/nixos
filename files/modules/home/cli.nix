@@ -32,6 +32,8 @@
       enableFishIntegration = true;
     };
 
+    password-store.enable = true;
+
     ripgrep = {
       enable = true;
       arguments = ["--smart-case"];
@@ -77,6 +79,8 @@
   home.packages = with pkgs; [
     cloc
     devbox
+    doppler
+    gh
     lazydocker
     lua
     openfortivpn
