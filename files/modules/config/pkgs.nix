@@ -11,6 +11,7 @@
     onlyoffice-desktopeditors
     openssh
     openssl
+    openconnect
     p7zip
     playerctl
     unzip
